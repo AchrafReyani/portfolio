@@ -3,9 +3,8 @@
 import React from "react";
 import LocaleSwitcher from "./LocaleSwitcher";
 import { useTranslations } from "next-intl";
-import { Yellowtail, Reggae_One } from 'next/font/google';
+import { Reggae_One } from 'next/font/google';
 
-const yellowtail = Yellowtail({ subsets: ['latin'], weight: '400' });
 const reggaeOne = Reggae_One({ subsets: ['latin'], weight: '400' });
 
 export default function Header() {
