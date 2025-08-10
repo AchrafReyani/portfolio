@@ -23,5 +23,10 @@
   "Home": {
     "introduction":"I'm Achraf Reyani.",
     "bottom_text":"I'm a fullstack developer with a focus on React, currently based in Japan."
+  },
+  "About": {
+    "title":"About me",
+    "description":"My initial curiosity for software development inspired me to pursue a Bachelor's degree in Computer Science, where I discovered a strong passion for web development, particularly fullstack development. This passion has guided my journey as a curious and dedicated developer focused on building robust fullstack applications using modern frameworks like Next.js and backend services such as Supabase and Firebase. I’m also very interested in being involved in the whole cycle of software development—from writing code to testing, deployment, and maintenance."
   }
+
 }

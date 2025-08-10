@@ -1,3 +1,4 @@
+import { About } from '@/components/About';
 import Header from '@/components/Header';
 import { Home } from '@/components/Home';
 import { Locale } from 'next-intl';
@@ -18,6 +19,7 @@ export default function IndexPage({params}: Props) {
     <>
     <Header />
     <Home />
+    <About />
     </>
   );
 }
