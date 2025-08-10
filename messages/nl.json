@@ -1,0 +1,50 @@
+{
+  "Manifest": {
+    "name": "Mijn App"
+  },
+  "LocaleLayout": {
+    "title": "Portfolio"
+  },
+  "LocaleSwitcher": {
+    "label": "Taal",
+    "locale": "{locale}"
+  },
+  "Header": {
+    "name": "Achraf Reyani",
+    "home": "Home",
+    "about": "Over mij",
+    "resume": "CV",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "Home": {
+    "introduction": "Ik ben Achraf Reyani.",
+    "bottom_text": "Ik ben een fullstack developer met een focus op React, momenteel gevestigd in Japan."
+  },
+  "About": {
+    "title": "Over mij",
+    "description": "Mijn aanvankelijke nieuwsgierigheid naar softwareontwikkeling inspireerde mij om een Bachelor in Computerwetenschappen te volgen, waar ik een sterke passie ontdekte voor webontwikkeling, vooral fullstack development. Deze passie heeft mijn reis geleid als een nieuwsgierige en toegewijde ontwikkelaar die zich richt op het bouwen van robuuste fullstack applicaties met moderne frameworks zoals Next.js en backend diensten zoals Supabase en Firebase. Ik ben ook erg geïnteresseerd in het hele proces van softwareontwikkeling – van coderen tot testen, implementatie en onderhoud."
+  },
+  "Resume": {
+    "download_link": "CV downloaden",
+    "download_link_description": "Voor meer details bekijk mijn CV."
+  },
+  "Portfolio": {
+    "title": "Bekijk mijn persoonlijke projecten.",
+    "project_1": "project 1",
+    "project_2": "project 2",
+    "project_3": "project 3"
+  },
+  "Contact": {
+    "title": "Neem contact op.",
+    "name": "Naam",
+    "email": "E-mail",
+    "subject": "Onderwerp",
+    "message": "Bericht",
+    "submit": "Verzenden",
+    "my_address": "Tsukuba, Japan",
+    "success_message": "Bedankt voor je bericht! Je bericht is succesvol verzonden. Ik neem snel contact met je op.",
+    "error_message": "Oeps! Er ging iets mis bij het verzenden van je bericht. Probeer het later nog eens of neem direct contact met me op via e-mail.",
+    "sending": "Je bericht wordt verzonden..."
+  }
+}
