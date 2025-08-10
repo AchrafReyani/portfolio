@@ -5,15 +5,19 @@
   "Manifest": {
     "name": "My App"
   },
-  "Navigation": {
-    "home": "Home",
-    "pathnames": "Pathnames"
-  },
   "LocaleLayout": {
     "title": "Portfolio"
   },
   "LocaleSwitcher": {
     "label": "Language",
     "locale":"{locale}"
+  },
+  "Header": {
+    "name":"Achraf Reyani",
+    "home":"Home",
+    "about":"About",
+    "resume":"Resume",
+    "portfolio":"Portfolio",
+    "contact":"Contact"
   }
 }

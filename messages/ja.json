@@ -5,15 +5,19 @@
   "Manifest": {
     "name": "マイアプリ"
   },
-  "Navigation": {
-    "home": "Start",
-    "pathnames": "Pfadnamen"
-  },
   "LocaleLayout": {
     "title": "ポートフォリオ"
   },
   "LocaleSwitcher": {
     "label": "言語",
     "locale":"{locale}"
+  },
+  "Header": {
+    "name":"レヤーニ アシュラフ",
+    "home":"ホーム",
+    "about":"アバウト",
+    "resume":"履歴書",
+    "portfolio":"ポートフォリオ",
+    "contact":"問い合わせ"
   }
 }

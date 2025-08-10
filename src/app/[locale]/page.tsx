@@ -1,4 +1,4 @@
-import TestComp from '@/components/TestComp';
+import Header from '@/components/Header';
 import { Locale } from 'next-intl';
 import {setRequestLocale} from 'next-intl/server';
 import {use} from 'react';
@@ -15,7 +15,7 @@ export default function IndexPage({params}: Props) {
 
   return (
     <>
-    <TestComp/>
+    <Header />
     </>
   );
 }

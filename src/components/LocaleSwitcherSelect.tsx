@@ -26,11 +26,8 @@ export default function LocaleSwitcherSelect({
     const nextLocale = event.target.value as Locale;
     startTransition(() => {
       router.replace(
-        // @ts-expect-error -- TypeScript will validate that only known `params`
-        // are used in combination with a given `pathname`. Since the two will
-        // always match for the current route, we can skip runtime checks.
-        {pathname, params},
-        {locale: nextLocale}
+        { pathname, query: { ...params } },
+        { locale: nextLocale }
       );
     });
   }
@@ -38,20 +35,53 @@ export default function LocaleSwitcherSelect({
   return (
     <label
       className={clsx(
-        'relative text-gray-400',
-        isPending && 'transition-opacity [&:disabled]:opacity-30'
+        'relative inline-block text-gray-700',
+        isPending && 'opacity-60 pointer-events-none transition-opacity duration-300'
       )}
+      aria-label={label}
     >
-      <p className="sr-only">{label}</p>
       <select
-        className="inline-flex appearance-none bg-transparent py-3 pl-2 pr-6"
+        className="
+          appearance-none
+          bg-white
+          border
+          border-gray-300
+          rounded-md
+          py-2
+          pl-3
+          pr-8
+          text-sm
+          font-medium
+          text-gray-800
+          focus:outline-none
+          focus:ring-2
+          focus:ring-blue-500
+          focus:border-blue-500
+          transition
+          cursor-pointer
+        "
         defaultValue={defaultValue}
         disabled={isPending}
         onChange={onSelectChange}
       >
         {children}
       </select>
-      <span className="pointer-events-none absolute right-2 top-[8px]"></span>
+      <span
+        className="
+          pointer-events-none
+          absolute
+          top-1/2
+          right-3
+          -translate-y-1/2
+          w-4
+          h-4
+          border-l-2
+          border-b-2
+          border-gray-500
+          rotate-45
+          "
+        aria-hidden="true"
+      />
     </label>
   );
 }

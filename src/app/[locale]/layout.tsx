@@ -5,7 +5,6 @@ import {ReactNode} from 'react';
 import {clsx} from 'clsx';
 import {Inter} from 'next/font/google';
 import {routing} from '@/i18n/routing';
-import Navigation from '@/components/Navigation';
 
 type Props = {
   children: ReactNode;
@@ -42,7 +41,6 @@ export default async function LocaleLayout({children, params}: Props) {
     <html className="h-full" lang={locale}>
       <body className={clsx(inter.className, 'flex h-full flex-col')}>
         <NextIntlClientProvider>
-          <Navigation />
           {children}
         </NextIntlClientProvider>
       </body>
