@@ -1,7 +1,11 @@
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 export function Resume() {
   const t = useTranslations("Resume");
+  const locale = useLocale();
+
+  // Dynamically build PDF path based on locale
+  const resumePdf = `/docs/resume-${locale}.pdf`;
 
   return (
     <section
@@ -41,7 +45,7 @@ export function Resume() {
       {/* Download Resume Link */}
       <div className="mt-16">
         <a
-          href="/pdf.pdf" // Replace with your actual resume file path
+          href={resumePdf}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block px-6 py-3 bg-indigo-600 text-white font-semibold rounded-md shadow-md hover:bg-indigo-700 transition"
