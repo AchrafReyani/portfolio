@@ -41,6 +41,7 @@
     "email":"Email",
     "subject":"Subject",
     "message":"Message",
+    "attachment":"Attachment",
     "submit":"Submit",
     "my_address":"Tsukuba, Japan",
     "success_message": "Thanks for reaching out! Your message has been sent successfully. I'll get back to you soon.",

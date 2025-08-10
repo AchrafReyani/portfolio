@@ -1,6 +1,18 @@
 import nodemailer from "nodemailer";
 
-export async function sendEmail({ name, email, subject, message }: { name: string; email: string; subject: string; message: string }) {
+export async function sendEmail({
+  name,
+  email,
+  subject,
+  message,
+  attachment,
+}: {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+  attachment?: { filename: string; content: Buffer };
+}) {
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: Number(process.env.SMTP_PORT),
@@ -11,10 +23,9 @@ export async function sendEmail({ name, email, subject, message }: { name: strin
     },
   });
 
-  // Compose the email content including sender's email
   const mailOptions = {
-    from: process.env.SMTP_USER, // Your Gmail address
-    to: process.env.MY_EMAIL, // Your receiving email (probably same as SMTP_USER)
+    from: process.env.SMTP_USER,
+    to: process.env.MY_EMAIL,
     subject: `[Portfolio Contact] ${subject || "No subject"}`,
     text: `
 Name: ${name}
@@ -29,6 +40,7 @@ ${message}
       <p><strong>Message:</strong></p>
       <p>${message.replace(/\n/g, "<br />")}</p>
     `,
+    attachments: attachment ? [attachment] : [],
   };
 
   await transporter.sendMail(mailOptions);

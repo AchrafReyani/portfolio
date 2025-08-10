@@ -2,13 +2,14 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { FaEnvelope, FaMapMarkerAlt, FaGithub } from "react-icons/fa";
+import { FaEnvelope, FaMapMarkerAlt, FaGithub, FaPaperclip } from "react-icons/fa";
 
 export function Contact() {
   const t = useTranslations("Contact");
 
   const [loading, setLoading] = useState(false);
   const [feedback, setFeedback] = useState<string | null>(null);
+  const [file, setFile] = useState<File | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -16,23 +17,22 @@ export function Contact() {
     setFeedback(null);
 
     const form = e.currentTarget;
-    const formData = {
-      name: (form.elements.namedItem("name") as HTMLInputElement)?.value || "",
-      email: (form.elements.namedItem("email") as HTMLInputElement)?.value || "",
-      subject: (form.elements.namedItem("subject") as HTMLInputElement)?.value || "",
-      message: (form.elements.namedItem("message") as HTMLTextAreaElement)?.value || "",
-    };
+    const formData = new FormData(form);
+
+    if (file) {
+      formData.append("attachment", file);
+    }
 
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: formData, // No headers — browser sets them for FormData
       });
 
       if (res.ok) {
         setFeedback(t("success_message") || "Message sent successfully!");
         form.reset();
+        setFile(null);
       } else {
         const data = await res.json();
         setFeedback(data.message || t("error_message") || "Failed to send message.");
@@ -103,6 +103,29 @@ export function Contact() {
                 required
                 className="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
               ></textarea>
+            </div>
+
+            {/* Attachment */}
+            <div>
+              <label
+                htmlFor="attachment"
+                className="flex items-center gap-2 text-sm font-medium cursor-pointer hover:text-indigo-400 transition"
+              >
+                <FaPaperclip className="text-indigo-500" />
+                {t("attachment")}
+              </label>
+              <input
+                type="file"
+                id="attachment"
+                name="attachment"
+                className="hidden"
+                onChange={(e) => setFile(e.target.files?.[0] || null)}
+              />
+              {file && (
+                <p className="mt-2 text-xs text-gray-400">
+                  {file.name} ({Math.round(file.size / 1024)} KB)
+                </p>
+              )}
             </div>
 
             <button
