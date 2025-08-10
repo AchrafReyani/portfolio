@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { FaPaperclip } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 
 interface AttachmentInputProps {
   file: File | null;
@@ -7,6 +8,7 @@ interface AttachmentInputProps {
 }
 
 export function AttachmentInput({ file, setFile }: AttachmentInputProps) {
+  const t = useTranslations("Contact");
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,7 +29,7 @@ export function AttachmentInput({ file, setFile }: AttachmentInputProps) {
         className="flex items-center gap-2 text-sm font-medium cursor-pointer hover:text-indigo-400 transition"
       >
         <FaPaperclip className="text-indigo-500" />
-        Attachment
+        {t('attachment')}
       </label>
 
       <input

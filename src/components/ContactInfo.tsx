@@ -7,6 +7,8 @@ interface ContactInfoProps {
 }
 
 export function ContactInfo({ myAddress, email, githubUrl }: ContactInfoProps) {
+  const githubDisplay = githubUrl.replace(/^https?:\/\//, "");
+
   return (
     <div className="flex-1 w-full space-y-8">
       <div className="flex items-center gap-4">
@@ -29,7 +31,7 @@ export function ContactInfo({ myAddress, email, githubUrl }: ContactInfoProps) {
           rel="noopener noreferrer"
           className="hover:underline"
         >
-          github.com/achrafreyani
+          {githubDisplay}
         </a>
       </div>
     </div>
