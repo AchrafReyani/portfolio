@@ -51,7 +51,7 @@ export default function LocaleSwitcherSelect({
           rounded-md
           py-2
           pl-3
-          pr-8
+          pr-12
           text-sm
           font-medium
           text-gray-800
