@@ -1,16 +1,14 @@
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
+import { DownloadResumeButton } from "./DownloadResumeButton";
 
 export function Resume() {
   const t = useTranslations("Resume");
-  const locale = useLocale();
-
-  // Dynamically build PDF path based on locale
-  const resumePdf = `/docs/resume-${locale}.pdf`;
 
   return (
     <section
       id="resume"
-      className="min-h-screen bg-white text-gray-900 flex flex-col items-center px-6 md:px-20 py-16 max-w-7xl mx-auto"
+      className="w-full bg-white text-gray-900 flex flex-col items-center px-6 md:px-20 py-16 max-w-7xl mx-auto"
+      style={{ minHeight: "100vh", paddingBottom: "6rem", marginBottom: "6rem" }}
     >
       {/* Education */}
       <div className="w-full max-w-4xl mb-16">
@@ -42,17 +40,9 @@ export function Resume() {
         </div>
       </div>
 
-      {/* Download Resume Link */}
+      {/* Download Resume Button */}
       <div className="mt-16">
-        <a
-          href={resumePdf}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block px-6 py-3 bg-indigo-600 text-white font-semibold rounded-md shadow-md hover:bg-indigo-700 transition"
-        >
-          {t("download_link")}
-        </a>
-        <p className="mt-2 text-gray-600 text-sm">{t("download_link_description")}</p>
+        <DownloadResumeButton />
       </div>
     </section>
   );

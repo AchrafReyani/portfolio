@@ -24,9 +24,6 @@ export default function Header() {
             <a href="#about" className="text-gray-700 hover:text-blue-600 transition">
               {t('about')}
             </a>
-            <a href="#resume" className="text-gray-700 hover:text-blue-600 transition">
-              {t('resume')}
-            </a>
             <a href="#portfolio" className="text-gray-700 hover:text-blue-600 transition">
               {t('portfolio')}
             </a>

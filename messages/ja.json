@@ -15,7 +15,7 @@
   "Header": {
     "name":"レヤーニ アシュラフ",
     "home":"ホーム",
-    "about":"アバウト",
+    "about":"自己紹介",
     "resume":"履歴書",
     "portfolio":"ポートフォリオ",
     "contact":"問い合わせ"
@@ -40,5 +40,19 @@
     "job_2_description": "以前の職場の説明。",
     "download_link": "履歴書をダウンロード",
     "download_link_description": "詳細は履歴書をご覧ください。"
+  },
+  "Portfolio": {
+    "title":"私の個人プロジェクトをご覧ください。",
+    "project_1":"プロジェクト１",
+    "project_2":"プロジェクト２",
+    "project_3":"プロジェクト３"
+  },
+  "Contact": {
+    "title":"お気軽にお問い合わせください",
+    "name":"お名前",
+    "email":"メールアドレス",
+    "subject":"件名",
+    "message":"お問い合わせ内容",
+    "submit":"送信"
   }
 }

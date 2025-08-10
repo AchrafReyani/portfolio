@@ -40,7 +40,19 @@
     "job_2_description":"Description of previous job.",
     "download_link":"Download Resume",
     "download_link_description":"For more details please check out my resume."
+  },
+  "Portfolio": {
+    "title":"Check out my personal projects.",
+    "project_1":"project 1",
+    "project_2":"project 2",
+    "project_3":"project 3"
+  },
+  "Contact": {
+    "title":"Get in touch.",
+    "name":"Name",
+    "email":"Email",
+    "subject":"Subject",
+    "message":"Message",
+    "submit":"Submit"
   }
-
-
 }
