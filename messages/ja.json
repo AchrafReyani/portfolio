@@ -1,0 +1,16 @@
+{
+  "Test": {
+    "home": "japanese test"
+  },
+  "Navigation": {
+    "home": "Start",
+    "pathnames": "Pfadnamen"
+  },
+  "LocaleLayout": {
+    "title": "EnglishTitle"
+  },
+  "LocaleSwitcher": {
+    "label": "言語",
+    "locale":"{locale}"
+  }
+}

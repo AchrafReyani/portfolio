@@ -1,0 +1,16 @@
+{
+  "Test": {
+    "home": "english test"
+  },
+  "Navigation": {
+    "home": "Home",
+    "pathnames": "Pathnames"
+  },
+  "LocaleLayout": {
+    "title": "EnglishTitle"
+  },
+  "LocaleSwitcher": {
+    "label": "Language",
+    "locale":"{locale}"
+  }
+}
