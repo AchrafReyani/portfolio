@@ -2,6 +2,9 @@
   "Test": {
     "home": "japanese test"
   },
+  "Manifest": {
+    "name": "マイアプリ"
+  },
   "Navigation": {
     "home": "Start",
     "pathnames": "Pfadnamen"

@@ -2,6 +2,9 @@
   "Test": {
     "home": "english test"
   },
+  "Manifest": {
+    "name": "My App"
+  },
   "Navigation": {
     "home": "Home",
     "pathnames": "Pathnames"
