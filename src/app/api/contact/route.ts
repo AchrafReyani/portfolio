@@ -15,10 +15,10 @@ export async function POST(request: NextRequest) {
     }
 
     await sendEmail({
-      from: `"${name}" <${email}>`,
-      to: process.env.MY_EMAIL as string,
+      name,
+      email,
       subject: subject || 'New Contact Form Message',
-      text: message,
+      message,
     });
 
     return NextResponse.json({ message: 'Email sent successfully!' });
