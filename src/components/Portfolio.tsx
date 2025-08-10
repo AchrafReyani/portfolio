@@ -25,7 +25,7 @@ export function Portfolio() {
   return (
     <section
       id="portfolio"
-      className="min-h-[1111px] md:min-h-[600px] bg-gray-100 text-gray-900 px-6 md:px-20 py-16 flex flex-col items-center"
+      className="min-h-[1111px] md:min-h-[600px] bg-gray-100 text-gray-900 px-6 md:px-20 py-16 flex flex-col items-center" //probably a cleaner way to do this
     >
       <h2 className="text-4xl font-bold mb-12 border-b-4 border-indigo-600 inline-block pb-2">
         {t("title")}
