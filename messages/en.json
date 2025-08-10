@@ -27,6 +27,20 @@
   "About": {
     "title":"About me",
     "description":"My initial curiosity for software development inspired me to pursue a Bachelor's degree in Computer Science, where I discovered a strong passion for web development, particularly fullstack development. This passion has guided my journey as a curious and dedicated developer focused on building robust fullstack applications using modern frameworks like Next.js and backend services such as Supabase and Firebase. I’m also very interested in being involved in the whole cycle of software development—from writing code to testing, deployment, and maintenance."
+  },
+  "Resume": {
+    "education":"Education",
+    "university_title":"Bachelor's degree in Computer Science",
+    "university_name":"Rotterdam University of Applied Sciences",
+    "university_description":"During my studies at Rotterdam University of Applied Sciences, I built a strong foundation in computer science through both theoretical coursework and hands-on projects. I gained practical experience in fullstack web development using modern technologies and frameworks, and participated in collaborative group assignments that emphasized agile methodologies and version control with Git. Additionally, I had opportunities to engage in internships and real-world software development tasks, which strengthened my skills in software design, testing, and deployment. Throughout my education, I developed critical problem-solving abilities and learned to work effectively within diverse teams.",
+    "work":"Work",
+    "job_1_name":"Current Job",
+    "job_1_description":"Description of current job.",
+    "job_2_name":"Previous Job",
+    "job_2_description":"Description of previous job.",
+    "download_link":"Download Resume",
+    "download_link_description":"For more details please check out my resume."
   }
+
 
 }
