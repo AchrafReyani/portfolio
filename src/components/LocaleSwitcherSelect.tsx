@@ -5,6 +5,8 @@ import {useParams} from 'next/navigation';
 import {Locale} from 'next-intl';
 import {ChangeEvent, ReactNode, useTransition} from 'react';
 import {usePathname, useRouter} from '@/i18n/navigation';
+import { FaGlobe } from 'react-icons/fa';
+
 
 type Props = {
   children: ReactNode;
@@ -66,21 +68,9 @@ export default function LocaleSwitcherSelect({
       >
         {children}
       </select>
-      <span
-        className="
-          pointer-events-none
-          absolute
-          top-1/2
-          right-3
-          -translate-y-1/2
-          w-4
-          h-4
-          border-l-2
-          border-b-2
-          border-gray-500
-          rotate-45
-          "
+      <FaGlobe
         aria-hidden="true"
+        className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 w-5 h-5 text-gray-500"
       />
     </label>
   );

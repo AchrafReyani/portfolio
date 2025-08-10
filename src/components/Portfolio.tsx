@@ -4,22 +4,21 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 export function Portfolio() {
   const t = useTranslations("Portfolio");
 
-  // Placeholder project data (replace img paths and URLs later)
   const projects = [
     {
       name: t("project_1"),
       image: "/images/project1.jpg",
-      url: "https://github.com/yourusername/project1",
+      url: "https://github.com/achrafreyani/project1",
     },
     {
       name: t("project_2"),
       image: "/images/project2.jpg",
-      url: "https://github.com/yourusername/project2",
+      url: "https://github.com/achrafreyani/project2",
     },
     {
       name: t("project_3"),
       image: "/images/project3.jpg",
-      url: "https://github.com/yourusername/project3",
+      url: "https://github.com/achrafreyani/project3",
     },
   ];
 
