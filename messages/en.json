@@ -18,7 +18,7 @@
     "contact":"Contact"
   },
   "Home": {
-    "introduction":"I'm Achraf Reyani.",
+    "introduction":"I'm Achraf Reyani",
     "bottom_text":"I'm a fullstack developer with a focus on React, currently based in Japan."
   },
   "About": {
@@ -30,13 +30,13 @@
     "download_link_description":"For more details please check out my resume."
   },
   "Portfolio": {
-    "title":"Check out my personal projects.",
+    "title":"Check out my personal projects",
     "project_1":"project 1",
     "project_2":"project 2",
     "project_3":"project 3"
   },
   "Contact": {
-    "title":"Get in touch.",
+    "title":"Get in touch",
     "name":"Name",
     "email":"Email",
     "subject":"Subject",

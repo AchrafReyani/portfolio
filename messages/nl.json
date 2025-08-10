@@ -18,7 +18,7 @@
     "contact": "Contact"
   },
   "Home": {
-    "introduction": "Ik ben Achraf Reyani.",
+    "introduction": "Ik ben Achraf Reyani",
     "bottom_text": "Ik ben een fullstack developer met een focus op React, momenteel gevestigd in Japan."
   },
   "About": {
@@ -30,17 +30,18 @@
     "download_link_description": "Voor meer details bekijk mijn CV."
   },
   "Portfolio": {
-    "title": "Bekijk mijn persoonlijke projecten.",
+    "title": "Bekijk mijn persoonlijke projecten",
     "project_1": "project 1",
     "project_2": "project 2",
     "project_3": "project 3"
   },
   "Contact": {
-    "title": "Neem contact op.",
+    "title": "Neem contact op",
     "name": "Naam",
     "email": "E-mail",
     "subject": "Onderwerp",
     "message": "Bericht",
+    "attachment":"Bijlage",
     "submit": "Verzenden",
     "my_address": "Tsukuba, Japan",
     "success_message": "Bedankt voor je bericht! Je bericht is succesvol verzonden. Ik neem snel contact met je op.",

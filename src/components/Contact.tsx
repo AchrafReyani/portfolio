@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { FaEnvelope, FaMapMarkerAlt, FaGithub, FaPaperclip } from "react-icons/fa";
 
@@ -10,6 +10,7 @@ export function Contact() {
   const [loading, setLoading] = useState(false);
   const [feedback, setFeedback] = useState<string | null>(null);
   const [file, setFile] = useState<File | null>(null);
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -52,7 +53,7 @@ export function Contact() {
       >
         {/* Left: Contact Form */}
         <div className="flex-1 w-full">
-          <h2 className="text-4xl font-bold mb-8">{t("title")}</h2>
+          <h2 className="text-4xl font-bold mb-8">{t("title")}🤝</h2>
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
               <label htmlFor="name" className="block mb-2 text-sm font-medium">
@@ -105,28 +106,45 @@ export function Contact() {
               ></textarea>
             </div>
 
-            {/* Attachment */}
-            <div>
-              <label
-                htmlFor="attachment"
-                className="flex items-center gap-2 text-sm font-medium cursor-pointer hover:text-indigo-400 transition"
+        {/* Attachment */}
+        <div>
+          <label
+            htmlFor="attachment"
+            className="flex items-center gap-2 text-sm font-medium cursor-pointer hover:text-indigo-400 transition"
+          >
+          <FaPaperclip className="text-indigo-500" />
+          {t("attachment")}
+          </label>
+          <input
+            type="file"
+            id="attachment"
+            name="attachment"
+            className="hidden"
+            ref={fileInputRef}
+            onChange={(e) => setFile(e.target.files?.[0] || null)}
+          />
+
+          {file && (
+            <div className="mt-2 flex items-center gap-2 text-xs text-gray-400">
+              <span>
+                {file.name} ({Math.round(file.size / 1024)} KB)
+              </span>
+              <button
+                type="button"
+                onClick={() => {
+                  setFile(null);
+                  if (fileInputRef.current) {
+                    fileInputRef.current.value = ""; // Reset the file input
+                  }
+                }}
+                className="text-red-500 hover:text-red-700 font-bold"
+                aria-label="Remove file"
               >
-                <FaPaperclip className="text-indigo-500" />
-                {t("attachment")}
-              </label>
-              <input
-                type="file"
-                id="attachment"
-                name="attachment"
-                className="hidden"
-                onChange={(e) => setFile(e.target.files?.[0] || null)}
-              />
-              {file && (
-                <p className="mt-2 text-xs text-gray-400">
-                  {file.name} ({Math.round(file.size / 1024)} KB)
-                </p>
-              )}
-            </div>
+                ✕
+              </button>
+              </div>
+            )}
+        </div>
 
             <button
               type="submit"

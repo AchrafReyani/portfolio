@@ -18,7 +18,7 @@
     "contact":"問い合わせ"
   },
   "Home": {
-    "introduction":"レヤーニ アシュラフと申します。",
+    "introduction":"レヤーニ アシュラフと申します",
     "bottom_text":"現在日本を拠点に、Reactを中心にフルスタック開発を行っています。"
   },
   "About": {
@@ -30,7 +30,7 @@
     "download_link_description": "詳細は履歴書をご覧ください。"
   },
   "Portfolio": {
-    "title":"私の個人プロジェクトをご覧ください。",
+    "title":"私の個人プロジェクトをご覧ください",
     "project_1":"プロジェクト１",
     "project_2":"プロジェクト２",
     "project_3":"プロジェクト３"
@@ -41,6 +41,7 @@
     "email":"メールアドレス",
     "subject":"件名",
     "message":"お問い合わせ内容",
+    "attachment":"添付ファイル",
     "submit":"送信",
     "my_address":"つくば市、日本",
     "success_message": "ご連絡ありがとうございます！メッセージは正常に送信されました。できるだけ早く返信いたします。",

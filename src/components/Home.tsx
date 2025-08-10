@@ -26,7 +26,7 @@ export function Home() {
 
       {/* Content */}
       <div className="relative z-10 max-w-xl">
-        <h1 className="text-4xl sm:text-5xl font-bold mb-4">{t('introduction')}</h1>
+        <h1 className="text-4xl sm:text-5xl font-bold mb-4">{t('introduction')}🧑‍💻</h1>
         <p className="text-lg sm:text-xl">{t('bottom_text')}</p>
       </div>
 
