@@ -53,6 +53,7 @@
     "email":"Email",
     "subject":"Subject",
     "message":"Message",
-    "submit":"Submit"
+    "submit":"Submit",
+    "my_address":"Tsukuba, Japan"
   }
 }

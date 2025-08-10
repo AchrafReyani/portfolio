@@ -53,6 +53,7 @@
     "email":"メールアドレス",
     "subject":"件名",
     "message":"お問い合わせ内容",
-    "submit":"送信"
+    "submit":"送信",
+    "my_address":"つくば市、日本"
   }
 }

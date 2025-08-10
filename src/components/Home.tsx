@@ -1,12 +1,13 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { FaArrowUp } from "react-icons/fa";
 
 export function Home() {
   const t = useTranslations('Home');
 
   // Smooth scroll helper
-  const scrollToAbout = (e: { preventDefault: () => void; }) => {
+  const scrollToAbout = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     const aboutSection = document.querySelector('#about');
     if (aboutSection) {
@@ -32,10 +33,10 @@ export function Home() {
       {/* Scroll button */}
       <button
         onClick={scrollToAbout}
-        className="absolute bottom-10 z-10 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-full text-white font-semibold transition"
+        className="absolute bottom-10 z-10 rounded-full p-3 bg-blue-600 hover:bg-white hover:text-blue-600 text-white transition flex items-center justify-center"
         aria-label="Scroll to About section"
       >
-        ↓
+        <FaArrowUp className="transform rotate-180 text-4xl" />
       </button>
     </section>
   );
