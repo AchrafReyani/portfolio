@@ -65,11 +65,19 @@ export function Home() {
       {/* Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-xl bg-black bg-opacity-50 p-6 rounded-md">
-        <h1 className="text-4xl sm:text-5xl font-bold mb-4">{typedIntroduction}🧑‍💻</h1>
-        <p className="text-lg sm:text-xl">{typedBottomText}</p>
-      </div>
+{/* Content */}
+<div className="relative z-10 bg-black bg-opacity-50 p-6 rounded-md max-w-full">
+  <h1 className="font-bold mb-4
+    text-3xl sm:text-4xl md:text-5xl
+    whitespace-normal sm:whitespace-nowrap
+  ">
+    {typedIntroduction}🧑‍💻
+  </h1>
+  <p className="text-base sm:text-lg md:text-xl whitespace-normal sm:whitespace-nowrap">
+    {typedBottomText}
+  </p>
+</div>
+
 
       {/* Scroll button */}
       <button
