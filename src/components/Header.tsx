@@ -3,6 +3,10 @@
 import React from "react";
 import LocaleSwitcher from "./LocaleSwitcher";
 import { useTranslations } from "next-intl";
+import { Yellowtail, Reggae_One } from 'next/font/google';
+
+const yellowtail = Yellowtail({ subsets: ['latin'], weight: '400' });
+const reggaeOne = Reggae_One({ subsets: ['latin'], weight: '400' });
 
 export default function Header() {
   const t = useTranslations('Header');
@@ -11,9 +15,9 @@ export default function Header() {
     <header className="fixed top-0 left-0 w-full bg-white bg-opacity-90 backdrop-blur-md shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo or Brand Name */}
-          <div className="text-xl font-bold cursor-pointer" onClick={() => window.scrollTo({top:0, behavior: 'smooth'})}>
-            {t("name")}
+          {/* this is the name i want to turn into yellowtail */}
+          <div className={`${reggaeOne.className} text-3xl font-bold cursor-pointer`} onClick={() => window.scrollTo({top:0, behavior: 'smooth'})}>
+            {t("name")} 
           </div>
 
           {/* Desktop Nav */}
