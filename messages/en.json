@@ -19,5 +19,9 @@
     "resume":"Resume",
     "portfolio":"Portfolio",
     "contact":"Contact"
+  },
+  "Home": {
+    "introduction":"I'm Achraf Reyani.",
+    "bottom_text":"I'm a fullstack developer with a focus on React, currently based in Japan."
   }
 }

@@ -19,5 +19,9 @@
     "resume":"履歴書",
     "portfolio":"ポートフォリオ",
     "contact":"問い合わせ"
+  },
+  "Home": {
+    "introduction":"レヤーニ アシュラフと申します。",
+    "bottom_text":"現在日本を拠点に、Reactを中心にフルスタック開発を行っています。"
   }
 }
