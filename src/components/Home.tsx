@@ -68,7 +68,7 @@ export function Home() {
 {/* Content */}
 <div className="relative z-10 bg-black bg-opacity-50 p-6 rounded-md max-w-full">
   <h1 className="font-bold mb-4
-    text-3xl sm:text-4xl md:text-5xl
+    text-2xl sm:text-4xl md:text-5xl
     whitespace-normal sm:whitespace-nowrap
   ">
     {typedIntroduction}🧑‍💻
