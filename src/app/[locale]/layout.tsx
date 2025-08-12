@@ -13,6 +13,9 @@ type Props = {
 
 const inter = Inter({subsets: ['latin']});
 
+const domain = 'https://portfolio-rho-gold-24.vercel.app' //change this when changing domain names
+const imageUrl = `${domain}/images/preview-image.jpg`;
+
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({locale}));
 }
@@ -28,11 +31,11 @@ export async function generateMetadata(props: Omit<Props, 'children'>) {
     openGraph: {
       title: t('title'),
       description: t('description'),
-      url: 'https://portfolio-rho-gold-24.vercel.app',
+      url: domain,
       siteName: t('title'),
       images: [
         {
-          url: 'https://portfolio-rho-gold-24.vercel.app/images/preview-image.jpg',
+          url: imageUrl,
           width: 1200,
           height: 630,
           alt: 'Preview Image Alt Text',
@@ -46,7 +49,7 @@ export async function generateMetadata(props: Omit<Props, 'children'>) {
       card: 'summary_large_image',
       title: t('title'),
       description: t('description'),
-      images: ['https://portfolio-rho-gold-24.vercel.app/images/preview-image.jpg'],
+      images: [imageUrl],
     },
   };
 }
