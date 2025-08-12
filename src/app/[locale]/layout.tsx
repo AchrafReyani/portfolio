@@ -23,7 +23,31 @@ export async function generateMetadata(props: Omit<Props, 'children'>) {
   const t = await getTranslations({locale, namespace: 'LocaleLayout'});
 
   return {
-    title: t('title')
+    title: t('title'),
+    description: t('description'),
+    openGraph: {
+      title: t('title'),
+      description: t('description'),
+      url: 'https://portfolio-rho-gold-24.vercel.app',
+      siteName: t('title'),
+      images: [
+        {
+          url: 'https://portfolio-rho-gold-24.vercel.app/images/preview-image.jpg',
+          width: 1200,
+          height: 630,
+          alt: 'Preview Image Alt Text',
+        },
+      ],
+      locale,
+      type: 'website',
+    },
+
+    twitter: {
+      card: 'summary_large_image',
+      title: t('title'),
+      description: t('description'),
+      images: ['https://portfolio-rho-gold-24.vercel.app/images/preview-image.jpg'],
+    },
   };
 }
 

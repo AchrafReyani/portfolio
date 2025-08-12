@@ -3,7 +3,8 @@
     "name": "My App"
   },
   "LocaleLayout": {
-    "title": "Portfolio"
+    "title": "Achraf Reyani",
+    "description": "Welcome to my Full-stack developer portfolio."
   },
   "LocaleSwitcher": {
     "label": "Language",
