@@ -61,8 +61,8 @@ export function Contact() {
         />
         <ContactInfo
           myAddress={t("my_address")}
-          email="achrafreyani99@gmail.com"
-          githubUrl="https://github.com/achrafreyani"
+          email={process.env.NEXT_PUBLIC_MY_EMAIL || ""}
+          githubUrl={process.env.NEXT_PUBLIC_MY_GITHUB || ""}
 />
 
       </section>

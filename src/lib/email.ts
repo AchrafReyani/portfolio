@@ -25,7 +25,7 @@ export async function sendEmail({
 
   const mailOptions = {
     from: process.env.SMTP_USER,
-    to: process.env.MY_EMAIL,
+    to: process.env.NEXT_PUBLIC_MY_EMAIL,
     subject: `[Portfolio Contact] ${subject || "No subject"}`,
     text: `
 Name: ${name}
