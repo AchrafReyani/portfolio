@@ -1,5 +1,5 @@
 {
-  "name": "example-app-router",
+  "name": "portfolio",
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
