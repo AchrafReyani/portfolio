@@ -1,38 +1,74 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import LocaleSwitcher from "./LocaleSwitcher";
 import { useTranslations } from "next-intl";
-import { Reggae_One } from 'next/font/google';
+import { Reggae_One } from "next/font/google";
 
-const reggaeOne = Reggae_One({ subsets: ['latin'], weight: '400' });
+const reggaeOne = Reggae_One({ subsets: ["latin"], weight: "400" });
+const sections: ("home" | "about" | "portfolio" | "contact")[] = [
+  "home",
+  "about",
+  "portfolio",
+  "contact",
+];
 
 export default function Header() {
-  const t = useTranslations('Header');
+  const t = useTranslations("Header");
+  const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPos = window.scrollY + window.innerHeight / 2;
+      let current = "home";
+      sections.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el && el.offsetTop <= scrollPos) {
+          current = id;
+        }
+      });
+      setActiveSection(current);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <header className="fixed top-0 left-0 w-full bg-white bg-opacity-90 backdrop-blur-md shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* this is the name i want to turn into yellowtail */}
-          <div className={`${reggaeOne.className} text-3xl font-bold cursor-pointer`} onClick={() => window.scrollTo({top:0, behavior: 'smooth'})}>
-            {t("name")} 
+          {/* Logo / Name */}
+          <div
+            className={`${reggaeOne.className} text-3xl font-bold cursor-pointer`}
+            onClick={() => scrollToSection("home")}
+          >
+            {t("name")}
           </div>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex space-x-8">
-            <a href="#home" className="text-gray-700 hover:text-blue-600 transition">
-              {t('home')}
-            </a>
-            <a href="#about" className="text-gray-700 hover:text-blue-600 transition">
-              {t('about')}
-            </a>
-            <a href="#portfolio" className="text-gray-700 hover:text-blue-600 transition">
-              {t('portfolio')}
-            </a>
-            <a href="#contact" className="text-gray-700 hover:text-blue-600 transition">
-              {t('contact')}
-            </a>
+            {sections.map((id) => (
+              <button
+                key={id}
+                onClick={() => scrollToSection(id)}
+                className={`transition ${
+                  activeSection === id
+                    ? "text-blue-600 font-bold"
+                    : "text-gray-700 hover:text-blue-600"
+                }`}
+              >
+                {t(id)}
+              </button>
+            ))}
           </nav>
 
           {/* LocaleSwitcher */}
@@ -41,16 +77,24 @@ export default function Header() {
           </div>
 
           {/* Mobile menu button */}
-          <MobileMenuButton />
+          <MobileMenuButton
+            activeSection={activeSection}
+            scrollToSection={scrollToSection}
+          />
         </div>
       </div>
     </header>
-  )
+  );
 }
 
-// Mobile menu button and menu logic
-function MobileMenuButton() {
-  const [open, setOpen] = React.useState(false);
+// Mobile menu
+interface MobileMenuButtonProps {
+  activeSection: string;
+  scrollToSection: (id: string) => void;
+}
+
+function MobileMenuButton({ activeSection, scrollToSection }: MobileMenuButtonProps) {
+  const [open, setOpen] = useState(false);
 
   const toggleMenu = () => setOpen(!open);
 
@@ -69,57 +113,58 @@ function MobileMenuButton() {
           xmlns="http://www.w3.org/2000/svg"
         >
           {open ? (
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M6 18L18 6M6 6l12 12"
+            />
           ) : (
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 12h16M4 18h16"
+            />
           )}
         </svg>
       </button>
-      {open && <MobileMenu setOpen={setOpen} />}
+      {open && <MobileMenu setOpen={setOpen} activeSection={activeSection} scrollToSection={scrollToSection} />}
     </>
   );
 }
 
 interface MobileMenuProps {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  activeSection: string;
+  scrollToSection: (id: string) => void;
 }
 
-function MobileMenu({ setOpen }: MobileMenuProps) {
-  const t = useTranslations('Header');
+function MobileMenu({ setOpen, activeSection, scrollToSection }: MobileMenuProps) {
+  const t = useTranslations("Header");
 
-  // Smooth scroll and close menu on click
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: string) => {
-    e.preventDefault();
-    const el = document.querySelector(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
+  const handleClick = (id: string) => {
+    scrollToSection(id);
     setOpen(false);
   };
 
   return (
     <nav className="md:hidden absolute top-16 left-0 w-full bg-white shadow-md z-40">
       <ul className="flex flex-col space-y-4 p-4">
-        <li>
-          <a href="#about" onClick={e => handleClick(e, '#about')} className="block text-gray-700 hover:text-blue-600">
-            {t('about')}
-          </a>
-        </li>
-        <li>
-          <a href="#resume" onClick={e => handleClick(e, '#resume')} className="block text-gray-700 hover:text-blue-600">
-            {t('resume')}
-          </a>
-        </li>
-        <li>
-          <a href="#portfolio" onClick={e => handleClick(e, '#portfolio')} className="block text-gray-700 hover:text-blue-600">
-            {t('portfolio')}
-          </a>
-        </li>
-        <li>
-          <a href="#contact" onClick={e => handleClick(e, '#contact')} className="block text-gray-700 hover:text-blue-600">
-            {t('contact')}
-          </a>
-        </li>
+        {sections.map((id) => (
+          <li key={id}>
+            <button
+              onClick={() => handleClick(id)}
+              className={`block w-full text-left transition ${
+                activeSection === id
+                  ? "text-blue-600 font-bold"
+                  : "text-gray-700 hover:text-blue-600"
+              }`}
+            >
+              {t(id)}
+            </button>
+          </li>
+        ))}
         <li>
           <LocaleSwitcher />
         </li>
