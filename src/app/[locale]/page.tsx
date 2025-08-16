@@ -8,7 +8,6 @@ import { Footer } from '@/components/Footer';
 import { Locale } from 'next-intl';
 import {setRequestLocale} from 'next-intl/server';
 import {use} from 'react';
-import Head from 'next/head';
 
 
 type Props = {
