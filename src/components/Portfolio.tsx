@@ -8,17 +8,17 @@ export function Portfolio() {
     {
       name: t("project_1"),
       image: "/images/project1.jpg",
-      url: "https://github.com/achrafreyani/project1",
+      url: "https://todo-achrafreyanis-projects.vercel.app/",
     },
     {
       name: t("project_2"),
       image: "/images/project2.jpg",
-      url: "https://github.com/achrafreyani/project2",
+      url: "https://github.com/AchrafReyani/untitled-note-app",
     },
     {
       name: t("project_3"),
       image: "/images/project3.jpg",
-      url: "https://github.com/achrafreyani/project3",
+      url: "https://untitled-diceware-password-generator.vercel.app/",
     },
   ];
 

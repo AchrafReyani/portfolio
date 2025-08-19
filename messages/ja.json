@@ -32,9 +32,9 @@
   },
   "Portfolio": {
     "title":"私の個人プロジェクトをご覧ください",
-    "project_1":"プロジェクト１",
-    "project_2":"プロジェクト２",
-    "project_3":"プロジェクト３"
+    "project_1":"todo-app",
+    "project_2":"note-app",
+    "project_3":"password-generator"
   },
   "Contact": {
     "title":"お気軽にお問い合わせください",

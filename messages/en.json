@@ -32,9 +32,9 @@
   },
   "Portfolio": {
     "title":"Check out my personal projects",
-    "project_1":"project 1",
-    "project_2":"project 2",
-    "project_3":"project 3"
+    "project_1":"todo-app",
+    "project_2":"note-app",
+    "project_3":"password-generator"
   },
   "Contact": {
     "title":"Get in touch",
