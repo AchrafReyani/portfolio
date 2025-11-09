@@ -8,7 +8,7 @@ export function Portfolio() {
     {
       name: t("project_1"),
       image: "/images/project1.jpg",
-      url: "https://todo-achrafreyanis-projects.vercel.app/",
+      url: "https://untitled-job-matching-website-front.vercel.app/",
     },
     {
       name: t("project_2"),
