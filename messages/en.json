@@ -31,10 +31,9 @@
     "download_link_description":"For more details please check out my resume."
   },
   "Portfolio": {
-    "title":"Check out my personal projects",
-    "project_1":"job-matching-app",
-    "project_2":"note-app",
-    "project_3":"password-generator"
+    "title":"Check out my personal project",
+    "project":"job-matching-app",
+    "project_description":"Full-stack job-matching app using Next.js, NestJS, and PostgreSQL with user accounts, job listings, applications, and chat."
   },
   "Contact": {
     "title":"Get in touch",

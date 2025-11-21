@@ -32,9 +32,8 @@
   },
   "Portfolio": {
     "title":"私の個人プロジェクトをご覧ください",
-    "project_1":"job-matching-app",
-    "project_2":"note-app",
-    "project_3":"password-generator"
+    "project":"job-matching-app",
+    "project_description":"Full-stack job-matching app using Next.js, NestJS, and PostgreSQL with user accounts, job listings, applications, and chat."
   },
   "Contact": {
     "title":"お気軽にお問い合わせください",

@@ -4,23 +4,12 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 export function Portfolio() {
   const t = useTranslations("Portfolio");
 
-  const projects = [
-    {
-      name: t("project_1"),
-      image: "/images/project1.jpg",
-      url: "https://untitled-job-matching-website-front.vercel.app/",
-    },
-    {
-      name: t("project_2"),
-      image: "/images/project2.jpg",
-      url: "https://github.com/AchrafReyani/untitled-note-app",
-    },
-    {
-      name: t("project_3"),
-      image: "/images/project3.jpg",
-      url: "https://untitled-diceware-password-generator.vercel.app/",
-    },
-  ];
+  const project = {
+    name: t("project"),
+    description: t("project_description"), // added for your translations
+    image: "/images/project1.jpg",
+    url: "https://untitled-job-matching-website-front.vercel.app/",
+  };
 
   return (
     <section
@@ -31,28 +20,26 @@ export function Portfolio() {
         {t("title")}🛠️
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
-        {projects.map((project, index) => (
-          <a
-            key={index}
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative block w-full h-64 overflow-hidden rounded-lg shadow-lg"
-          >
-            <img
-              src={project.image}
-              alt={project.name}
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center">
-              <span className="text-white text-xl font-semibold mb-2">
-                {project.name}
-              </span>
-              <FaExternalLinkAlt className="text-white text-lg" />
-            </div>
-          </a>
-        ))}
+      <div className="grid grid-cols-1 gap-8 w-full max-w-6xl">
+        <a
+          href={project.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative block w-full h-64 overflow-hidden rounded-lg shadow-lg"
+        >
+          <img
+            src={project.image}
+            alt={project.name}
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center">
+            <span className="text-white text-xl font-semibold mb-2">
+              {project.name}
+            </span>
+            <p className="text-white text-center">{project.description}</p>
+            <FaExternalLinkAlt className="text-white text-lg mt-2" />
+          </div>
+        </a>
       </div>
     </section>
   );

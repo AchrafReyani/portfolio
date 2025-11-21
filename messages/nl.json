@@ -31,10 +31,9 @@
     "download_link_description": "Voor meer details bekijk mijn CV."
   },
   "Portfolio": {
-    "title": "Bekijk mijn persoonlijke projecten",
-    "project_1":"job-matching-app",
-    "project_2":"note-app",
-    "project_3":"password-generator"
+    "title": "Bekijk mijn persoonlijke project",
+    "project":"job-matching-app",
+    "project_description":"Full-stack job-matching app using Next.js, NestJS, and PostgreSQL with user accounts, job listings, applications, and chat."
   },
   "Contact": {
     "title": "Neem contact op",
