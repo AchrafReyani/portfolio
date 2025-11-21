@@ -33,11 +33,13 @@
   "Portfolio": {
   "project": "Job Matching Platform",
   "title": "Portfolio",
+  "image_text": "Check it out!",
   "portfolio_bulletpoint_1": "Register as a company or job seeker",
   "portfolio_bulletpoint_2": "Edit your profile",
   "portfolio_bulletpoint_3": "Companies can create job vacancies",
   "portfolio_bulletpoint_4": "Job seekers can apply; companies can accept or reject applications",
-  "portfolio_bulletpoint_5": "Once accepted, a chat opens between the company and the job seeker"
+  "portfolio_bulletpoint_5": "Once accepted, a chat opens between the company and the job seeker",
+  "github_text": "Check out the source code on GitHub!"
   },
   "Contact": {
     "title":"Get in touch",

@@ -33,11 +33,13 @@
   "Portfolio": {
     "project": "Job Matching Platform",
     "title": "Portfolio",
+    "image_text": "Check it!",
     "portfolio_bulletpoint_1": "Registreer als bedrijf of werkzoekende",
     "portfolio_bulletpoint_2": "Bewerk je profiel",
     "portfolio_bulletpoint_3": "Bedrijven kunnen vacatures aanmaken",
     "portfolio_bulletpoint_4": "Werkzoekenden kunnen solliciteren; bedrijven kunnen aanvragen accepteren of afwijzen",
-    "portfolio_bulletpoint_5": "Zodra een aanvraag wordt geaccepteerd, wordt een chat geopend tussen het bedrijf en de werkzoekende"
+    "portfolio_bulletpoint_5": "Zodra een aanvraag wordt geaccepteerd, wordt een chat geopend tussen het bedrijf en de werkzoekende",
+    "github_text": "Check de sourcecode op GitHub!"
 },
   "Contact": {
     "title": "Neem contact op",

@@ -33,11 +33,13 @@
   "Portfolio": {
     "project": "ジョブマッチングプラットフォーム",
     "title": "ポートフォリオ",
+    "image_text": "ぜひ見てください！",
     "portfolio_bulletpoint_1": "会社または求職者として登録",
     "portfolio_bulletpoint_2": "プロフィールを編集",
     "portfolio_bulletpoint_3": "企業は求人を作成可能",
     "portfolio_bulletpoint_4": "求職者は応募でき、企業は応募を承認または拒否可能",
-    "portfolio_bulletpoint_5": "承認後、企業と求職者間でチャットが開始"
+    "portfolio_bulletpoint_5": "承認後、企業と求職者間でチャットが開始",
+    "github_text": "GitHubでソースコードを確認する"
   },
   "Contact": {
     "title":"お気軽にお問い合わせください",
