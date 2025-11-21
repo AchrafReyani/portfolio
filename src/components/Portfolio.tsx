@@ -9,7 +9,7 @@ export function Portfolio() {
     description: t("project_description"),
     image: "/images/project.jpg",
     url: "https://job-matching-website.vercel.app/",
-    github_url: process.env.NEXT_PUBLIC_MY_GITHUB+"/job-matching-platform",
+    github_url: process.env.NEXT_PUBLIC_MY_GITHUB + "/job-matching-platform",
   };
 
   return (
@@ -21,26 +21,35 @@ export function Portfolio() {
         {t("title")}🛠️
       </h2>
 
-      <div className="grid grid-cols-1 gap-8 w-full max-w-6xl">
+      <div className="flex flex-col md:flex-row items-center gap-8 w-full max-w-6xl">
+        {/* Image */}
         <a
           href={project.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative block w-full h-64 overflow-hidden rounded-lg shadow-lg"
+          className="block flex-shrink-0 rounded-lg shadow-lg overflow-hidden w-full md:w-2/3"
         >
           <img
             src={project.image}
             alt={project.name}
-            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            className="w-full h-auto object-cover aspect-[1899/1045] transition-transform duration-300 hover:scale-105"
           />
-          <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center">
-            <span className="text-white text-xl font-semibold mb-2">
-              {project.name}
-            </span>
-            <p className="text-white text-center">{project.description}</p>
-            <FaExternalLinkAlt className="text-white text-lg mt-2" />
-          </div>
         </a>
+
+        {/* Text Content */}
+        <div className="flex flex-col justify-center w-full md:w-1/3 space-y-4">
+          <h3 className="text-2xl font-semibold">{project.name}</h3>
+          <p className="text-gray-800">{project.description}</p>
+          <a
+            href={project.github_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center text-blue-600 hover:underline mt-2"
+          >
+            <FaGithub className="mr-2" />
+            GitHub
+          </a>
+        </div>
       </div>
     </section>
   );
