@@ -31,9 +31,13 @@
     "download_link_description":"For more details please check out my resume."
   },
   "Portfolio": {
-    "title":"Check out my personal project",
-    "project":"Job Matching Platform",
-    "project_description":"Full-stack job-matching app using Next.js, NestJS, and PostgreSQL with user accounts, job listings, applications, and chat."
+  "project": "Job Matching Platform",
+  "title": "Portfolio",
+  "portfolio_bulletpoint_1": "Register as a company or job seeker",
+  "portfolio_bulletpoint_2": "Edit your profile",
+  "portfolio_bulletpoint_3": "Companies can create job vacancies",
+  "portfolio_bulletpoint_4": "Job seekers can apply; companies can accept or reject applications",
+  "portfolio_bulletpoint_5": "Once accepted, a chat opens between the company and the job seeker"
   },
   "Contact": {
     "title":"Get in touch",

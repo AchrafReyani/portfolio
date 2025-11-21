@@ -31,10 +31,14 @@
     "download_link_description": "Voor meer details bekijk mijn CV."
   },
   "Portfolio": {
-    "title": "Bekijk mijn persoonlijke project",
-    "project":"job-matching-app",
-    "project_description":"Full-stack job-matching app using Next.js, NestJS, and PostgreSQL with user accounts, job listings, applications, and chat."
-  },
+    "project": "Job Matching Platform",
+    "title": "Portfolio",
+    "portfolio_bulletpoint_1": "Registreer als bedrijf of werkzoekende",
+    "portfolio_bulletpoint_2": "Bewerk je profiel",
+    "portfolio_bulletpoint_3": "Bedrijven kunnen vacatures aanmaken",
+    "portfolio_bulletpoint_4": "Werkzoekenden kunnen solliciteren; bedrijven kunnen aanvragen accepteren of afwijzen",
+    "portfolio_bulletpoint_5": "Zodra een aanvraag wordt geaccepteerd, wordt een chat geopend tussen het bedrijf en de werkzoekende"
+},
   "Contact": {
     "title": "Neem contact op",
     "name": "Naam",

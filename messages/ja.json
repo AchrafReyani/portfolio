@@ -31,9 +31,13 @@
     "download_link_description": "詳細は履歴書をご覧ください。"
   },
   "Portfolio": {
-    "title":"私の個人プロジェクトをご覧ください",
-    "project":"job-matching-app",
-    "project_description":"Full-stack job-matching app using Next.js, NestJS, and PostgreSQL with user accounts, job listings, applications, and chat."
+    "project": "ジョブマッチングプラットフォーム",
+    "title": "ポートフォリオ",
+    "portfolio_bulletpoint_1": "会社または求職者として登録",
+    "portfolio_bulletpoint_2": "プロフィールを編集",
+    "portfolio_bulletpoint_3": "企業は求人を作成可能",
+    "portfolio_bulletpoint_4": "求職者は応募でき、企業は応募を承認または拒否可能",
+    "portfolio_bulletpoint_5": "承認後、企業と求職者間でチャットが開始"
   },
   "Contact": {
     "title":"お気軽にお問い合わせください",
