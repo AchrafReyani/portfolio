@@ -6,9 +6,10 @@ export function Portfolio() {
 
   const project = {
     name: t("project"),
-    description: t("project_description"), // added for your translations
-    image: "/images/project1.jpg",
-    url: "https://untitled-job-matching-website-front.vercel.app/",
+    description: t("project_description"),
+    image: "/images/project.jpg",
+    url: "https://job-matching-website.vercel.app/",
+    github_url: process.env.NEXT_PUBLIC_MY_GITHUB+"/job-matching-platform",
   };
 
   return (

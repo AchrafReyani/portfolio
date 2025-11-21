@@ -13,7 +13,7 @@ type Props = {
 
 const inter = Inter({subsets: ['latin']});
 
-const domain = 'https://portfolio-rho-gold-24.vercel.app' //change this when changing domain names
+const domain = 'https://reyani.dev'
 const imageUrl = `${domain}/images/preview-image.jpg`;
 
 export function generateStaticParams() {
