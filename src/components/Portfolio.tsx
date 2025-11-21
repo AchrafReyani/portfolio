@@ -22,19 +22,27 @@ export function Portfolio() {
       </h2>
 
       <div className="flex flex-col md:flex-row items-center gap-8 w-full max-w-6xl">
-        {/* Image */}
-        <a
-          href={project.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block flex-shrink-0 rounded-lg shadow-lg overflow-hidden w-full md:w-2/3"
-        >
-          <img
-            src={project.image}
-            alt={project.name}
-            className="w-full h-auto object-cover aspect-[1899/1045] transition-transform duration-300 hover:scale-105"
-          />
-        </a>
+        {/* Image with hover overlay */}
+        <div className="relative w-full md:w-2/3 rounded-lg shadow-lg overflow-hidden group">
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full h-full"
+          >
+            <img
+              src={project.image}
+              alt={project.name}
+              className="w-full h-auto object-cover aspect-[1899/1045] transition-transform duration-300 group-hover:scale-105"
+            />
+            {/* Hover overlay */}
+            <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <span className="text-white text-lg font-semibold flex items-center gap-2">
+                Check it out <FaExternalLinkAlt />
+              </span>
+            </div>
+          </a>
+        </div>
 
         {/* Text Content */}
         <div className="flex flex-col justify-center w-full md:w-1/3 space-y-4">

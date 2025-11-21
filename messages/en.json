@@ -32,7 +32,7 @@
   },
   "Portfolio": {
     "title":"Check out my personal project",
-    "project":"job-matching-app",
+    "project":"Job Matching Platform",
     "project_description":"Full-stack job-matching app using Next.js, NestJS, and PostgreSQL with user accounts, job listings, applications, and chat."
   },
   "Contact": {
