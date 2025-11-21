@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 export function Portfolio() {
   const t = useTranslations("Portfolio");
