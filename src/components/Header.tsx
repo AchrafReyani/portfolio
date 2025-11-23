@@ -6,7 +6,6 @@ import ThemeToggle from "./ThemeToggle";
 import { useTranslations } from "next-intl";
 import { Reggae_One } from "next/font/google";
 
-
 const reggaeOne = Reggae_One({ subsets: ["latin"], weight: "400" });
 const sections: ("home" | "about" | "portfolio" | "contact")[] = [
   "home",
@@ -45,12 +44,12 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white bg-opacity-90 backdrop-blur-md shadow-md z-50">
+    <header className="fixed top-0 left-0 w-full bg-bg-light/90 dark:bg-bg-dark/90 backdrop-blur-md shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo / Name */}
           <div
-            className={`${reggaeOne.className} text-3xl font-bold cursor-pointer`}
+            className={`${reggaeOne.className} text-3xl font-bold cursor-pointer text-text-light dark:text-text-dark`}
             onClick={() => scrollToSection("home")}
           >
             {t("name")}
@@ -64,8 +63,8 @@ export default function Header() {
                 onClick={() => scrollToSection(id)}
                 className={`transition ${
                   activeSection === id
-                    ? "text-blue-600 font-bold"
-                    : "text-gray-700 hover:text-blue-600"
+                    ? "text-primary-light dark:text-primary-dark font-bold"
+                    : "text-text-light dark:text-text-dark hover:text-primary-light dark:hover:text-primary-dark"
                 }`}
               >
                 {t(id)}
@@ -109,7 +108,7 @@ function MobileMenuButton({ activeSection, scrollToSection }: MobileMenuButtonPr
         aria-label="Toggle menu"
       >
         <svg
-          className="w-6 h-6 text-gray-700"
+          className="w-6 h-6 text-text-light dark:text-text-dark"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -152,7 +151,7 @@ function MobileMenu({ setOpen, activeSection, scrollToSection }: MobileMenuProps
   };
 
   return (
-    <nav className="md:hidden absolute top-16 left-0 w-full bg-white shadow-md z-40">
+    <nav className="md:hidden absolute top-16 left-0 w-full bg-bg-light dark:bg-bg-dark shadow-md z-40">
       <ul className="flex flex-col space-y-4 p-4">
         {sections.map((id) => (
           <li key={id}>
@@ -160,8 +159,8 @@ function MobileMenu({ setOpen, activeSection, scrollToSection }: MobileMenuProps
               onClick={() => handleClick(id)}
               className={`block w-full text-left transition ${
                 activeSection === id
-                  ? "text-blue-600 font-bold"
-                  : "text-gray-700 hover:text-blue-600"
+                  ? "text-primary-light dark:text-primary-dark font-bold"
+                  : "text-text-light dark:text-text-dark hover:text-primary-light dark:hover:text-primary-dark"
               }`}
             >
               {t(id)}
