@@ -2,8 +2,10 @@
 
 import React, { useEffect, useState } from "react";
 import LocaleSwitcher from "./LocaleSwitcher";
+import ThemeToggle from "./ThemeToggle";
 import { useTranslations } from "next-intl";
 import { Reggae_One } from "next/font/google";
+
 
 const reggaeOne = Reggae_One({ subsets: ["latin"], weight: "400" });
 const sections: ("home" | "about" | "portfolio" | "contact")[] = [
