@@ -5,17 +5,17 @@ export function About() {
   const t = useTranslations("About");
 
   return (
-    <div className="bg-gray-900 w-full">
+    <div className="bg-bg-light dark:bg-bg-dark w-full">
       <section
         id="about"
-        className="min-h-screen text-white flex flex-col md:flex-row items-center px-6 md:px-20 py-16 max-w-7xl mx-auto"
+        className="min-h-screen text-text-light dark:text-text-dark flex flex-col md:flex-row items-center px-6 md:px-20 py-16 max-w-7xl mx-auto"
       >
         {/* Image - hidden on mobile, visible on md+ */}
         <div className="hidden md:flex md:justify-center md:items-center md:w-1/3">
           <img
             src="/images/about.png"
             alt="My face"
-            className="rounded-full w-48 h-48 object-cover border-4 border-white shadow-lg"
+            className="rounded-full w-48 h-48 object-cover border-4 border-text-light dark:border-text-dark shadow-lg"
             style={{ flexShrink: 0 }}
           />
         </div>
