@@ -26,29 +26,33 @@ module.exports = {
       colors: {
         // Semantic colors
         primary: {
-          light: '#5fc3e7', // nice blue for light mode
-          dark: '#38bdf8',  // slightly brighter blue for dark mode
+          light: '#5fc3e7',
+          dark: '#38bdf8',
         },
         secondary: {
-          light: '#f3f4f6', // very light gray
-          dark: '#1f2937',  // dark gray/charcoal
+          light: '#f3f4f6',
+          dark: '#1f2937',
         },
         accent: {
-          light: '#f59e0b', // orange/gold
-          dark: '#fbbf24',  // lighter gold
+          light: '#f59e0b',
+          dark: '#fbbf24',
         },
         text: {
-          light: '#111827', // dark text for light mode
-          dark: '#f9fafb',  // light text for dark mode
+          light: '#111827',
+          dark: '#f9fafb',
         },
         muted: {
-          light: '#6b7280', // gray-500 style
-          dark: '#9ca3af',  // lighter gray for dark mode
+          light: '#6b7280',
+          dark: '#9ca3af',
         },
         bg: {
           light: '#ffffff',
-          dark: '#0f172a', // slate-900
+          dark: '#0f172a',
         }
+      },
+      boxShadow: {
+        'header-light': '0 4px 6px rgba(0,0,0,0.1)',
+        'header-dark': '0 4px 6px rgba(255,255,255,0.15)',
       }
     }
   },
