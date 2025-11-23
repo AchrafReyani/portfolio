@@ -73,9 +73,10 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* LocaleSwitcher */}
-          <div className="hidden md:block">
+          {/* LocaleSwitcher and ThemeToggle */}
+          <div className="hidden md:flex items-center space-x-2">
             <LocaleSwitcher />
+            <ThemeToggle />
           </div>
 
           {/* Mobile menu button */}
@@ -169,6 +170,9 @@ function MobileMenu({ setOpen, activeSection, scrollToSection }: MobileMenuProps
         ))}
         <li>
           <LocaleSwitcher />
+        </li>
+        <li>
+          <ThemeToggle />
         </li>
       </ul>
     </nav>
