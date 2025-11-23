@@ -59,30 +59,37 @@ export function Home() {
   return (
     <section
       id="home"
-      className="min-h-screen bg-cover bg-center relative flex flex-col justify-center items-center text-white px-4 text-center"
+      className="min-h-screen bg-cover bg-center relative flex flex-col justify-center items-center px-4 text-center"
       style={{ backgroundImage: "url('/images/background.jpg')" }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+      <div className="absolute inset-0 bg-bg-dark/50 dark:bg-bg-dark/50"></div>
 
-{/* Content */}
-<div className="relative z-10 bg-black bg-opacity-50 p-6 rounded-md max-w-full">
-  <h1 className="font-bold mb-4
-    text-2xl sm:text-4xl md:text-5xl
-    whitespace-normal sm:whitespace-nowrap
-  ">
-    {typedIntroduction}🧑‍💻
-  </h1>
-  <p className="text-base sm:text-lg md:text-xl whitespace-normal sm:whitespace-nowrap">
-    {typedBottomText}
-  </p>
-</div>
-
+      {/* Content */}
+      <div className="relative z-10 p-6 rounded-md max-w-full bg-bg-light/50 dark:bg-bg-dark/50">
+        <h1 className="font-bold mb-4
+          text-2xl sm:text-4xl md:text-5xl
+          text-text-light dark:text-text-dark
+          whitespace-normal sm:whitespace-nowrap
+        ">
+          {typedIntroduction}🧑‍💻
+        </h1>
+        <p className="text-base sm:text-lg md:text-xl text-text-light dark:text-text-dark whitespace-normal sm:whitespace-nowrap">
+          {typedBottomText}
+        </p>
+      </div>
 
       {/* Scroll button */}
       <button
         onClick={scrollToAbout}
-        className="absolute bottom-10 z-10 rounded-full p-3 bg-blue-600 hover:bg-white hover:text-blue-600 text-white transition flex items-center justify-center"
+        className="
+          absolute bottom-10 z-10 rounded-full p-3
+          bg-primary-light text-text-light
+          dark:bg-primary-dark dark:text-text-dark
+          hover:bg-accent-light dark:hover:bg-accent-dark
+          hover:text-text-light dark:hover:text-text-dark
+          transition flex items-center justify-center
+        "
         aria-label="Scroll to About section"
       >
         <FaArrowUp className="transform rotate-180 text-4xl" />
