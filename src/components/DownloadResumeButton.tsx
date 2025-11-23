@@ -14,12 +14,19 @@ export function DownloadResumeButton() {
         href={resumePdf}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-md shadow-md hover:bg-indigo-700 transition"
+        className="
+          inline-flex items-center gap-2 px-6 py-3 
+          bg-primary-light text-text-light 
+          dark:bg-primary-dark dark:text-text-dark 
+          font-semibold rounded-md shadow-md 
+          hover:bg-accent-light dark:hover:bg-accent-dark 
+          transition
+        "
       >
         <Download className="w-5 h-5" />
         {t("download_link")}
       </a>
-      <p className="mt-2 text-gray-600 text-sm">
+      <p className="mt-2 text-muted-light dark:text-muted-dark text-sm">
         {t("download_link_description")}
       </p>
     </div>

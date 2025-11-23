@@ -26,9 +26,14 @@ export function AttachmentInput({ file, setFile }: AttachmentInputProps) {
     <div>
       <label
         htmlFor="attachment"
-        className="flex items-center gap-2 text-sm font-medium cursor-pointer hover:text-indigo-400 transition"
+        className="
+          flex items-center gap-2 text-sm font-medium cursor-pointer 
+          text-primary-light dark:text-primary-dark 
+          hover:text-accent-light dark:hover:text-accent-dark 
+          transition
+        "
       >
-        <FaPaperclip className="text-indigo-500" />
+        <FaPaperclip className="text-primary-light dark:text-primary-dark" />
         {t('attachment')}
       </label>
 
@@ -42,14 +47,18 @@ export function AttachmentInput({ file, setFile }: AttachmentInputProps) {
       />
 
       {file && (
-        <div className="mt-2 flex items-center gap-2 text-xs text-gray-400">
+        <div className="mt-2 flex items-center gap-2 text-xs text-muted-light dark:text-muted-dark">
           <span>
             {file.name} ({Math.round(file.size / 1024)} KB)
           </span>
           <button
             type="button"
             onClick={clearFile}
-            className="text-red-500 hover:text-red-700 font-bold"
+            className="
+              text-accent-light dark:text-accent-dark 
+              hover:text-accent-dark dark:hover:text-accent-light 
+              font-bold
+            "
             aria-label="Remove file"
           >
             ✕

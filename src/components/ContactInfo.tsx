@@ -31,16 +31,16 @@ export function ContactInfo({ myAddress, email, githubUrl }: ContactInfoProps) {
   }, [copied]);
 
   return (
-    <div className="flex-1 w-full space-y-8">
+    <div className="flex-1 w-full space-y-8 text-text-light dark:text-text-dark">
       {/* Address */}
       <div className="flex items-center gap-4">
-        <FaMapMarkerAlt className="text-indigo-500 text-2xl" />
+        <FaMapMarkerAlt className="text-primary-light dark:text-primary-dark text-2xl" />
         <span>{myAddress}</span>
       </div>
 
       {/* Email with copy-to-clipboard */}
       <div className="flex items-center gap-4">
-        <FaEnvelope className="text-indigo-500 text-2xl" />
+        <FaEnvelope className="text-primary-light dark:text-primary-dark text-2xl" />
         <div className="flex items-center gap-2 relative">
           <button
             onClick={handleCopyEmail}
@@ -50,9 +50,12 @@ export function ContactInfo({ myAddress, email, githubUrl }: ContactInfoProps) {
           </button>
           {copied && (
             <span
-              className={`px-2 py-1 text-sm bg-indigo-500 text-white rounded shadow-md transition-opacity duration-200 ${
-                showNotification ? "opacity-100" : "opacity-0 duration-500"
-              }`}
+              className={`
+                px-2 py-1 text-sm
+                bg-primary-light text-text-light dark:bg-primary-dark dark:text-text-dark
+                rounded shadow-md transition-opacity duration-200
+                ${showNotification ? "opacity-100" : "opacity-0 duration-500"}
+              `}
             >
               {t('copied')}
             </span>
@@ -62,7 +65,7 @@ export function ContactInfo({ myAddress, email, githubUrl }: ContactInfoProps) {
 
       {/* Github */}
       <div className="flex items-center gap-4">
-        <FaGithub className="text-indigo-500 text-2xl" />
+        <FaGithub className="text-primary-light dark:text-primary-dark text-2xl" />
         <a
           href={githubUrl}
           target="_blank"

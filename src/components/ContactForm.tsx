@@ -21,12 +21,12 @@ export function ContactForm({
 }: ContactFormProps) {
   return (
     <div className="flex-1 w-full">
-      <h2 className="text-4xl font-bold mb-8">
+      <h2 className="text-4xl font-bold mb-8 text-text-light dark:text-text-dark">
         {t("title")}🤝
       </h2>
       <form className="space-y-6" onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="name" className="block mb-2 text-sm font-medium">
+          <label htmlFor="name" className="block mb-2 text-sm font-medium text-text-light dark:text-text-dark">
             {t("name")}
           </label>
           <input
@@ -34,12 +34,17 @@ export function ContactForm({
             id="name"
             name="name"
             required
-            className="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="
+              w-full px-4 py-2 rounded-md
+              bg-secondary-light border border-muted-light text-text-light
+              dark:bg-secondary-dark dark:border-muted-dark dark:text-text-dark
+              focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark
+            "
           />
         </div>
 
         <div>
-          <label htmlFor="email" className="block mb-2 text-sm font-medium">
+          <label htmlFor="email" className="block mb-2 text-sm font-medium text-text-light dark:text-text-dark">
             {t("email")}
           </label>
           <input
@@ -47,24 +52,34 @@ export function ContactForm({
             id="email"
             name="email"
             required
-            className="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="
+              w-full px-4 py-2 rounded-md
+              bg-secondary-light border border-muted-light text-text-light
+              dark:bg-secondary-dark dark:border-muted-dark dark:text-text-dark
+              focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark
+            "
           />
         </div>
 
         <div>
-          <label htmlFor="subject" className="block mb-2 text-sm font-medium">
+          <label htmlFor="subject" className="block mb-2 text-sm font-medium text-text-light dark:text-text-dark">
             {t("subject")}
           </label>
           <input
             type="text"
             id="subject"
             name="subject"
-            className="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="
+              w-full px-4 py-2 rounded-md
+              bg-secondary-light border border-muted-light text-text-light
+              dark:bg-secondary-dark dark:border-muted-dark dark:text-text-dark
+              focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark
+            "
           />
         </div>
 
         <div>
-          <label htmlFor="message" className="block mb-2 text-sm font-medium">
+          <label htmlFor="message" className="block mb-2 text-sm font-medium text-text-light dark:text-text-dark">
             {t("message")}
           </label>
           <textarea
@@ -72,7 +87,12 @@ export function ContactForm({
             name="message"
             rows={5}
             required
-            className="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="
+              w-full px-4 py-2 rounded-md
+              bg-secondary-light border border-muted-light text-text-light
+              dark:bg-secondary-dark dark:border-muted-dark dark:text-text-dark
+              focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark
+            "
           />
         </div>
 
@@ -82,14 +102,21 @@ export function ContactForm({
         <button
           type="submit"
           disabled={loading}
-          className="px-6 py-3 bg-indigo-600 text-white font-semibold rounded-md shadow-md hover:bg-indigo-700 transition disabled:opacity-50"
+          className="
+            px-6 py-3
+            bg-primary-light text-text-light
+            dark:bg-primary-dark dark:text-text-dark
+            font-semibold rounded-md shadow-md
+            hover:bg-accent-light dark:hover:bg-accent-dark
+            transition disabled:opacity-50
+          "
         >
           {loading ? t("sending") || "Sending..." : t("submit")}
         </button>
       </form>
 
       {feedback && (
-        <p className="mt-4 text-center text-sm">{feedback}</p>
+        <p className="mt-4 text-center text-sm text-text-light dark:text-text-dark">{feedback}</p>
       )}
     </div>
   );
