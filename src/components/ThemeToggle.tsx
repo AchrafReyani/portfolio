@@ -18,7 +18,7 @@ export default function ThemeToggle() {
       aria-label="Toggle Theme"
       className="
         p-2 rounded-lg transition-colors
-        hover:bg-gray-200 dark:hover:bg-gray-700
+        hover:bg-accent-light dark:hover:bg-accent-dark
       "
     >
       {theme === "light" ? (
