@@ -66,11 +66,13 @@ export default async function LocaleLayout({children, params}: Props) {
   setRequestLocale(locale);
 
   return (
-    <html className="h-full" lang={locale}>
+    <html className="h-full" lang={locale} suppressHydrationWarning>
       <body className={clsx(inter.className, 'flex h-full flex-col')}>
-        <NextIntlClientProvider>
-          {children}
-        </NextIntlClientProvider>
+        <ThemeProvider attribute="class">
+          <NextIntlClientProvider>
+            {children}
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
