@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { ContactForm } from "./ContactForm";
 import { ContactInfo } from "./ContactInfo";
@@ -46,7 +46,7 @@ export function Contact() {
   };
 
   return (
-    <div className="bg-gray-900 w-full text-white">
+    <div className="bg-bg-light dark:bg-bg-dark w-full text-text-light dark:text-text-dark">
       <section
         id="contact"
         className="min-h-screen flex flex-col md:flex-row items-start justify-center px-6 md:px-20 py-16 max-w-7xl mx-auto gap-12"
@@ -63,8 +63,7 @@ export function Contact() {
           myAddress={t("my_address")}
           email={process.env.NEXT_PUBLIC_MY_EMAIL || ""}
           githubUrl={process.env.NEXT_PUBLIC_MY_GITHUB || ""}
-/>
-
+        />
       </section>
     </div>
   );
