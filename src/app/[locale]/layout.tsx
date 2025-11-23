@@ -5,6 +5,7 @@ import {ReactNode} from 'react';
 import {clsx} from 'clsx';
 import {Inter} from 'next/font/google';
 import {routing} from '@/i18n/routing';
+import { ThemeProvider } from 'next-themes';
 
 type Props = {
   children: ReactNode;
