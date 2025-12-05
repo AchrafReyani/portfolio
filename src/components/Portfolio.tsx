@@ -30,7 +30,8 @@ export function Portfolio() {
 
       <div className="flex flex-col md:flex-row w-full max-w-6xl">
         {/* Image */}
-        <div className="relative w-full md:w-1/2 rounded-lg shadow-lg overflow-hidden group">
+        <div className="relative w-full md:w-1/2 rounded-lg shadow-card-light dark:shadow-card-dark overflow-hidden group">
+
           <a
             href={project.url}
             target="_blank"
