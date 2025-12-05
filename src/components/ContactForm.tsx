@@ -1,6 +1,6 @@
-import React from "react";
-import { useTranslations } from "next-intl";
-import { AttachmentInput } from "./AttachmentInput";
+import React from 'react';
+import {useTranslations} from 'next-intl';
+import {AttachmentInput} from './AttachmentInput';
 
 interface ContactFormProps {
   t: ReturnType<typeof useTranslations>;
@@ -17,17 +17,20 @@ export function ContactForm({
   file,
   setFile,
   handleSubmit,
-  feedback,
+  feedback
 }: ContactFormProps) {
   return (
     <div className="flex-1 w-full">
       <h2 className="text-4xl font-bold mb-8 text-text-light dark:text-text-dark">
-        {t("title")}🤝
+        {t('title')}🤝
       </h2>
       <form className="space-y-6" onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="name" className="block mb-2 text-sm font-medium text-text-light dark:text-text-dark">
-            {t("name")}
+          <label
+            htmlFor="name"
+            className="block mb-2 text-sm font-medium text-text-light dark:text-text-dark"
+          >
+            {t('name')}
           </label>
           <input
             type="text"
@@ -44,8 +47,11 @@ export function ContactForm({
         </div>
 
         <div>
-          <label htmlFor="email" className="block mb-2 text-sm font-medium text-text-light dark:text-text-dark">
-            {t("email")}
+          <label
+            htmlFor="email"
+            className="block mb-2 text-sm font-medium text-text-light dark:text-text-dark"
+          >
+            {t('email')}
           </label>
           <input
             type="email"
@@ -62,8 +68,11 @@ export function ContactForm({
         </div>
 
         <div>
-          <label htmlFor="subject" className="block mb-2 text-sm font-medium text-text-light dark:text-text-dark">
-            {t("subject")}
+          <label
+            htmlFor="subject"
+            className="block mb-2 text-sm font-medium text-text-light dark:text-text-dark"
+          >
+            {t('subject')}
           </label>
           <input
             type="text"
@@ -79,8 +88,11 @@ export function ContactForm({
         </div>
 
         <div>
-          <label htmlFor="message" className="block mb-2 text-sm font-medium text-text-light dark:text-text-dark">
-            {t("message")}
+          <label
+            htmlFor="message"
+            className="block mb-2 text-sm font-medium text-text-light dark:text-text-dark"
+          >
+            {t('message')}
           </label>
           <textarea
             id="message"
@@ -111,12 +123,14 @@ export function ContactForm({
             transition disabled:opacity-50
           "
         >
-          {loading ? t("sending") || "Sending..." : t("submit")}
+          {loading ? t('sending') || 'Sending...' : t('submit')}
         </button>
       </form>
 
       {feedback && (
-        <p className="mt-4 text-center text-sm text-text-light dark:text-text-dark">{feedback}</p>
+        <p className="mt-4 text-center text-sm text-text-light dark:text-text-dark">
+          {feedback}
+        </p>
       )}
     </div>
   );

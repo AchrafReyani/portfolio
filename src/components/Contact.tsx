@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { useTranslations } from "next-intl";
-import { ContactForm } from "./ContactForm";
-import { ContactInfo } from "./ContactInfo";
+import {useState} from 'react';
+import {useTranslations} from 'next-intl';
+import {ContactForm} from './ContactForm';
+import {ContactInfo} from './ContactInfo';
 
 export function Contact() {
-  const t = useTranslations("Contact");
+  const t = useTranslations('Contact');
 
   const [loading, setLoading] = useState(false);
   const [feedback, setFeedback] = useState<string | null>(null);
@@ -21,25 +21,27 @@ export function Contact() {
     const formData = new FormData(form);
 
     if (file) {
-      formData.append("attachment", file);
+      formData.append('attachment', file);
     }
 
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        body: formData, // No headers — browser sets them for FormData
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        body: formData // No headers — browser sets them for FormData
       });
 
       if (res.ok) {
-        setFeedback(t("success_message") || "Message sent successfully!");
+        setFeedback(t('success_message') || 'Message sent successfully!');
         form.reset();
         setFile(null);
       } else {
         const data = await res.json();
-        setFeedback(data.message || t("error_message") || "Failed to send message.");
+        setFeedback(
+          data.message || t('error_message') || 'Failed to send message.'
+        );
       }
     } catch (error) {
-      setFeedback(t("error_message") || "Error sending message.");
+      setFeedback(t('error_message') || 'Error sending message.');
     } finally {
       setLoading(false);
     }
@@ -60,9 +62,9 @@ export function Contact() {
           feedback={feedback}
         />
         <ContactInfo
-          myAddress={t("my_address")}
-          email={process.env.NEXT_PUBLIC_MY_EMAIL || ""}
-          githubUrl={process.env.NEXT_PUBLIC_MY_GITHUB || ""}
+          myAddress={t('my_address')}
+          email={process.env.NEXT_PUBLIC_MY_EMAIL || ''}
+          githubUrl={process.env.NEXT_PUBLIC_MY_GITHUB || ''}
         />
       </section>
     </div>

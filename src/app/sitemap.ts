@@ -19,7 +19,10 @@ function getEntries(href: Parameters<typeof getPathname>[0]['href']) {
   }));
 }
 
-function getUrl(href: Parameters<typeof getPathname>[0]['href'], locale: Locale) {
+function getUrl(
+  href: Parameters<typeof getPathname>[0]['href'],
+  locale: Locale
+) {
   const pathname = getPathname({locale, href});
   return host + pathname;
 }

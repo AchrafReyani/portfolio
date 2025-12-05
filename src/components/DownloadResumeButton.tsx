@@ -1,8 +1,8 @@
-import { useTranslations, useLocale } from "next-intl";
-import { Download } from "lucide-react";
+import {useTranslations, useLocale} from 'next-intl';
+import {Download} from 'lucide-react';
 
 export function DownloadResumeButton() {
-  const t = useTranslations("Resume");
+  const t = useTranslations('Resume');
   const locale = useLocale();
 
   // Build the PDF path dynamically
@@ -24,10 +24,10 @@ export function DownloadResumeButton() {
         "
       >
         <Download className="w-5 h-5" />
-        {t("download_link")}
+        {t('download_link')}
       </a>
       <p className="mt-2 text-muted-light dark:text-muted-dark text-sm">
-        {t("download_link_description")}
+        {t('download_link_description')}
       </p>
     </div>
   );

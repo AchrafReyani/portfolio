@@ -1,14 +1,14 @@
-import React, { useRef } from "react";
-import { FaPaperclip } from "react-icons/fa";
-import { useTranslations } from "next-intl";
+import React, {useRef} from 'react';
+import {FaPaperclip} from 'react-icons/fa';
+import {useTranslations} from 'next-intl';
 
 interface AttachmentInputProps {
   file: File | null;
   setFile: (file: File | null) => void;
 }
 
-export function AttachmentInput({ file, setFile }: AttachmentInputProps) {
-  const t = useTranslations("Contact");
+export function AttachmentInput({file, setFile}: AttachmentInputProps) {
+  const t = useTranslations('Contact');
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -18,7 +18,7 @@ export function AttachmentInput({ file, setFile }: AttachmentInputProps) {
   const clearFile = () => {
     setFile(null);
     if (fileInputRef.current) {
-      fileInputRef.current.value = "";
+      fileInputRef.current.value = '';
     }
   };
 

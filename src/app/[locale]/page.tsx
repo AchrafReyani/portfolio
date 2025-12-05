@@ -1,14 +1,13 @@
 import Header from '@/components/Header';
-import { Home } from '@/components/Home';
-import { About } from '@/components/About';
-import { Portfolio } from '@/components/Portfolio';
-import { Contact } from '@/components/Contact';
-import { Footer } from '@/components/Footer';
+import {Home} from '@/components/Home';
+import {About} from '@/components/About';
+import {Portfolio} from '@/components/Portfolio';
+import {Contact} from '@/components/Contact';
+import {Footer} from '@/components/Footer';
 
-import { Locale } from 'next-intl';
+import {Locale} from 'next-intl';
 import {setRequestLocale} from 'next-intl/server';
 import {use} from 'react';
-
 
 type Props = {
   params: Promise<{locale: Locale}>;
@@ -22,12 +21,12 @@ export default function IndexPage({params}: Props) {
 
   return (
     <>
-    <Header />
-    <Home />
-    <About />
-    <Portfolio />
-    <Contact />
-    <Footer />
+      <Header />
+      <Home />
+      <About />
+      <Portfolio />
+      <Contact />
+      <Footer />
     </>
   );
 }

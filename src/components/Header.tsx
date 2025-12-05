@@ -1,27 +1,27 @@
-"use client";
+'use client';
 
-import React, { useEffect, useState } from "react";
-import LocaleSwitcher from "./LocaleSwitcher";
-import ThemeToggle from "./ThemeToggle";
-import { useTranslations } from "next-intl";
-import { Reggae_One } from "next/font/google";
+import React, {useEffect, useState} from 'react';
+import LocaleSwitcher from './LocaleSwitcher';
+import ThemeToggle from './ThemeToggle';
+import {useTranslations} from 'next-intl';
+import {Reggae_One} from 'next/font/google';
 
-const reggaeOne = Reggae_One({ subsets: ["latin"], weight: "400" });
-const sections: ("home" | "about" | "portfolio" | "contact")[] = [
-  "home",
-  "about",
-  "portfolio",
-  "contact",
+const reggaeOne = Reggae_One({subsets: ['latin'], weight: '400'});
+const sections: ('home' | 'about' | 'portfolio' | 'contact')[] = [
+  'home',
+  'about',
+  'portfolio',
+  'contact'
 ];
 
 export default function Header() {
-  const t = useTranslations("Header");
-  const [activeSection, setActiveSection] = useState("home");
+  const t = useTranslations('Header');
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPos = window.scrollY + window.innerHeight / 2;
-      let current = "home";
+      let current = 'home';
       sections.forEach((id) => {
         const el = document.getElementById(id);
         if (el && el.offsetTop <= scrollPos) {
@@ -31,29 +31,28 @@ export default function Header() {
       setActiveSection(current);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+      el.scrollIntoView({behavior: 'smooth'});
     }
   };
 
   return (
     <header className="fixed top-0 left-0 w-full bg-bg-light/90 dark:bg-bg-dark/90 backdrop-blur-md shadow-header-light dark:shadow-header-dark z-50">
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo / Name */}
           <div
             className={`${reggaeOne.className} text-3xl font-bold cursor-pointer text-text-light dark:text-text-dark`}
-            onClick={() => scrollToSection("home")}
+            onClick={() => scrollToSection('home')}
           >
-            {t("name")}
+            {t('name')}
           </div>
 
           {/* Desktop Nav */}
@@ -64,8 +63,8 @@ export default function Header() {
                 onClick={() => scrollToSection(id)}
                 className={`transition ${
                   activeSection === id
-                    ? "text-primary-light dark:text-primary-dark font-bold"
-                    : "text-text-light dark:text-text-dark hover:text-primary-light dark:hover:text-primary-dark"
+                    ? 'text-primary-light dark:text-primary-dark font-bold'
+                    : 'text-text-light dark:text-text-dark hover:text-primary-light dark:hover:text-primary-dark'
                 }`}
               >
                 {t(id)}
@@ -96,7 +95,10 @@ interface MobileMenuButtonProps {
   scrollToSection: (id: string) => void;
 }
 
-function MobileMenuButton({ activeSection, scrollToSection }: MobileMenuButtonProps) {
+function MobileMenuButton({
+  activeSection,
+  scrollToSection
+}: MobileMenuButtonProps) {
   const [open, setOpen] = useState(false);
 
   const toggleMenu = () => setOpen(!open);
@@ -132,7 +134,13 @@ function MobileMenuButton({ activeSection, scrollToSection }: MobileMenuButtonPr
           )}
         </svg>
       </button>
-      {open && <MobileMenu setOpen={setOpen} activeSection={activeSection} scrollToSection={scrollToSection} />}
+      {open && (
+        <MobileMenu
+          setOpen={setOpen}
+          activeSection={activeSection}
+          scrollToSection={scrollToSection}
+        />
+      )}
     </>
   );
 }
@@ -143,8 +151,12 @@ interface MobileMenuProps {
   scrollToSection: (id: string) => void;
 }
 
-function MobileMenu({ setOpen, activeSection, scrollToSection }: MobileMenuProps) {
-  const t = useTranslations("Header");
+function MobileMenu({
+  setOpen,
+  activeSection,
+  scrollToSection
+}: MobileMenuProps) {
+  const t = useTranslations('Header');
 
   const handleClick = (id: string) => {
     scrollToSection(id);
@@ -160,8 +172,8 @@ function MobileMenu({ setOpen, activeSection, scrollToSection }: MobileMenuProps
               onClick={() => handleClick(id)}
               className={`block w-full text-left transition ${
                 activeSection === id
-                  ? "text-primary-light dark:text-primary-dark font-bold"
-                  : "text-text-light dark:text-text-dark hover:text-primary-light dark:hover:text-primary-dark"
+                  ? 'text-primary-light dark:text-primary-dark font-bold'
+                  : 'text-text-light dark:text-text-dark hover:text-primary-light dark:hover:text-primary-dark'
               }`}
             >
               {t(id)}

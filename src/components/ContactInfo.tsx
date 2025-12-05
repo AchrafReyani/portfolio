@@ -1,6 +1,6 @@
-import { FaEnvelope, FaMapMarkerAlt, FaGithub } from "react-icons/fa";
-import { useState, useEffect } from "react";
-import { useTranslations } from "next-intl";
+import {FaEnvelope, FaMapMarkerAlt, FaGithub} from 'react-icons/fa';
+import {useState, useEffect} from 'react';
+import {useTranslations} from 'next-intl';
 
 interface ContactInfoProps {
   myAddress: string;
@@ -8,9 +8,9 @@ interface ContactInfoProps {
   githubUrl: string;
 }
 
-export function ContactInfo({ myAddress, email, githubUrl }: ContactInfoProps) {
-  const t = useTranslations("Contact");
-  const githubDisplay = githubUrl.replace(/^https?:\/\//, "");
+export function ContactInfo({myAddress, email, githubUrl}: ContactInfoProps) {
+  const t = useTranslations('Contact');
+  const githubDisplay = githubUrl.replace(/^https?:\/\//, '');
   const [copied, setCopied] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
 
@@ -54,7 +54,7 @@ export function ContactInfo({ myAddress, email, githubUrl }: ContactInfoProps) {
                 px-2 py-1 text-sm
                 bg-primary-light text-text-light dark:bg-primary-dark dark:text-text-dark
                 rounded shadow-md transition-opacity duration-200
-                ${showNotification ? "opacity-100" : "opacity-0 duration-500"}
+                ${showNotification ? 'opacity-100' : 'opacity-0 duration-500'}
               `}
             >
               {t('copied')}

@@ -1,11 +1,11 @@
 'use client';
 
 import clsx from 'clsx';
-import { useParams } from 'next/navigation';
-import { Locale } from 'next-intl';
-import { ChangeEvent, ReactNode, useTransition } from 'react';
-import { usePathname, useRouter } from '@/i18n/navigation';
-import { FaGlobe } from 'react-icons/fa';
+import {useParams} from 'next/navigation';
+import {Locale} from 'next-intl';
+import {ChangeEvent, ReactNode, useTransition} from 'react';
+import {usePathname, useRouter} from '@/i18n/navigation';
+import {FaGlobe} from 'react-icons/fa';
 
 type Props = {
   children: ReactNode;
@@ -13,7 +13,11 @@ type Props = {
   label: string;
 };
 
-export default function LocaleSwitcherSelect({ children, defaultValue, label }: Props) {
+export default function LocaleSwitcherSelect({
+  children,
+  defaultValue,
+  label
+}: Props) {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const pathname = usePathname();
@@ -22,7 +26,7 @@ export default function LocaleSwitcherSelect({ children, defaultValue, label }: 
   function onSelectChange(event: ChangeEvent<HTMLSelectElement>) {
     const nextLocale = event.target.value as Locale;
     startTransition(() => {
-      router.replace(pathname, { locale: nextLocale });
+      router.replace(pathname, {locale: nextLocale});
     });
   }
 
@@ -30,7 +34,8 @@ export default function LocaleSwitcherSelect({ children, defaultValue, label }: 
     <label
       className={clsx(
         'relative inline-block text-text-light dark:text-text-dark',
-        isPending && 'opacity-60 pointer-events-none transition-opacity duration-300'
+        isPending &&
+          'opacity-60 pointer-events-none transition-opacity duration-300'
       )}
       aria-label={label}
     >

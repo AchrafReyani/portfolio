@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { FaArrowUp } from "react-icons/fa";
+import {FaArrowUp} from 'react-icons/fa';
 
 export function Footer() {
   const scrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    const homeElement = document.getElementById("home");
+    const homeElement = document.getElementById('home');
     if (homeElement) {
-      homeElement.scrollIntoView({ behavior: "smooth" });
+      homeElement.scrollIntoView({behavior: 'smooth'});
     }
   };
 
