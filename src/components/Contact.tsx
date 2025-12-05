@@ -40,7 +40,7 @@ export function Contact() {
           data.message || t('error_message') || 'Failed to send message.'
         );
       }
-    } catch (error) {
+    } catch {
       setFeedback(t('error_message') || 'Error sending message.');
     } finally {
       setLoading(false);
