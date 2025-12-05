@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import {useTranslations} from 'next-intl';
 import {FaExternalLinkAlt, FaGithub} from 'react-icons/fa';
 
@@ -35,12 +36,13 @@ export function Portfolio() {
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="block w-full h-full"
+            className="block w-full h-full relative aspect-[1899/1045]"
           >
-            <img
+            <Image
               src={project.image}
               alt={project.name}
-              className="w-full h-auto object-cover aspect-[1899/1045] transition-transform duration-300 group-hover:scale-105"
+              fill
+              className="object-cover transition-transform duration-300 group-hover:scale-105"
             />
             {/* Hover overlay */}
             <div className="absolute inset-0 bg-overlay-light dark:bg-overlay-dark opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
