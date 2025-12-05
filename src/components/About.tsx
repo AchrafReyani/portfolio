@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import {useTranslations} from 'next-intl';
 import {DownloadResumeButton} from './DownloadResumeButton';
 
@@ -12,13 +13,16 @@ export function About() {
       >
         {/* Image - hidden on mobile, visible on md+ */}
         <div className="hidden md:flex md:justify-center md:items-center md:w-1/3">
-          <img
-            src="/images/about.png"
-            alt="My face"
-            className="rounded-full w-48 h-48 object-cover border-4 border-text-light dark:border-text-dark shadow-lg"
-            style={{flexShrink: 0}}
-          />
+          <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-text-light dark:border-text-dark shadow-lg flex-shrink-0">
+            <Image
+              src="/images/about.png"
+              alt="My face"
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
+
 
         {/* Text content */}
         <div className="md:w-2/3 mt-8 md:mt-0 md:pl-12 text-center md:text-left max-w-3xl">
