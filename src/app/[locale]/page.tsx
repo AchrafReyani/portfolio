@@ -1,9 +1,9 @@
-import Header from '@/components/Header';
-import {Home} from '@/components/Home';
-import {About} from '@/components/About';
-import {Portfolio} from '@/components/Portfolio';
-import {Contact} from '@/components/Contact';
-import {Footer} from '@/components/Footer';
+import Header from '@/components/sections/Header/Header';
+import { Home } from '@/components/sections/Home/Home';
+import { About } from '@/components/sections/About/About';
+import { Portfolio } from '@/components/sections/Portfolio/Portfolio';
+import { Contact } from '@/components/sections/Contact/Contact';
+import { Footer } from '@/components/sections/Footer/Footer';
 
 import {Locale} from 'next-intl';
 import {setRequestLocale} from 'next-intl/server';
