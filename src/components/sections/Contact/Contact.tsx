@@ -1,4 +1,4 @@
-import {Section} from '@/components/sections/About/Section';
+import {Section} from '@/components/shared/Section';
 import {ContactContainer} from './ContactContainer';
 
 export function Contact() {

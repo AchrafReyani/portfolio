@@ -1,4 +1,4 @@
-import { Section } from '@/components/sections/About/Section';
+import { Section } from '@/components/shared/Section';
 import { AboutImage } from './AboutImage';
 import {AboutContent} from './AboutContent';
 
