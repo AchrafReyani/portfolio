@@ -6,6 +6,7 @@ import {clsx} from 'clsx';
 import {Inter} from 'next/font/google';
 import {routing} from '@/i18n/routing';
 import {ThemeProvider} from 'next-themes';
+import FaviconThemeSwitcher from '@/components/common/FaviconThemeSwitcher';
 
 type Props = {
   children: ReactNode;
@@ -29,7 +30,7 @@ export async function generateMetadata(props: Omit<Props, 'children'>) {
     title: t('title'),
     description: t('description'),
     icons: {
-      icon: [{url: '/favicon-en-dark.ico', type: 'image/x-icon', sizes: 'any'}]
+      icon: [{url: '/favicon-en-light.ico', type: 'image/x-icon', sizes: 'any'}]
     },
     openGraph: {
       title: t('title'),
@@ -68,6 +69,7 @@ export default async function LocaleLayout({children, params}: Props) {
     <html className="h-full" lang={locale} suppressHydrationWarning>
       <body className={clsx(inter.className, 'flex h-full flex-col')}>
         <ThemeProvider attribute="class">
+          <FaviconThemeSwitcher />
           <NextIntlClientProvider>
             {children}
           </NextIntlClientProvider>
