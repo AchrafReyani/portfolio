@@ -69,7 +69,6 @@ export default async function LocaleLayout({children, params}: Props) {
       <body className={clsx(inter.className, 'flex h-full flex-col')}>
         <ThemeProvider attribute="class">
           <NextIntlClientProvider>
-            {/* Default favicon is already set in generateMetadata */}
             {children}
           </NextIntlClientProvider>
         </ThemeProvider>
