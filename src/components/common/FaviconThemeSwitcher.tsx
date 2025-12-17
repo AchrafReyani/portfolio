@@ -9,18 +9,23 @@ export default function FaviconThemeSwitcher() {
   useEffect(() => {
     if (!resolvedTheme) return;
 
-    const favicon =
-      document.querySelector<HTMLLinkElement>('link[rel="icon"]');
-
-    if (!favicon) return;
-
-    const icon =
+    const iconHref =
       resolvedTheme === 'dark'
         ? '/favicon-en-dark.ico'
         : '/favicon-en-light.ico';
 
-    // Cache-busting query string is CRITICAL in production
-    favicon.href = `${icon}?v=${resolvedTheme}-${Date.now()}`;
+    // Remove all existing favicons
+    document
+      .querySelectorAll('link[rel="icon"], link[rel="shortcut icon"]')
+      .forEach(el => el.remove());
+
+    // Create a fresh link element
+    const link = document.createElement('link');
+    link.rel = 'icon';
+    link.type = 'image/png';
+    link.href = `${iconHref}?v=${resolvedTheme}-${Date.now()}`;
+
+    document.head.appendChild(link);
   }, [resolvedTheme]);
 
   return null;
