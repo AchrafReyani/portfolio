@@ -69,9 +69,9 @@ export default async function LocaleLayout({children, params}: Props) {
     <html className="h-full" lang={locale} suppressHydrationWarning>
       <body className={clsx(inter.className, 'flex h-full flex-col')}>
         <ThemeProvider attribute="class">
-          <FaviconThemeSwitcher />
           <NextIntlClientProvider>
             {children}
+            <FaviconThemeSwitcher />
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>
