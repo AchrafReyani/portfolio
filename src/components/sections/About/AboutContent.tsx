@@ -6,7 +6,7 @@ export function AboutContent() {
 
   return (
     <div className="md:w-2/3 mt-8 md:mt-0 md:pl-12 text-center md:text-left max-w-3xl">
-      <h2 className="text-4xl font-bold mb-6">
+      <h2 className="text-4xl font-bold mb-6 border-b-4 border-primary-light dark:border-primary-dark inline-block pb-2">
         {t('title')} 🙋
       </h2>
 
