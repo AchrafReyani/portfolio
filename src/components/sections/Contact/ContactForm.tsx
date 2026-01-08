@@ -21,7 +21,7 @@ export function ContactForm({
 }: ContactFormProps) {
   return (
     <div className="flex-1 w-full">
-      <h2 className="text-4xl font-bold mb-8 text-text-light dark:text-text-dark">
+      <h2 className="text-4xl font-bold mb-8 text-text-light dark:text-text-dark border-b-4 border-primary-light dark:border-primary-dark inline-block pb-2">
         {t('title')}🤝
       </h2>
       <form className="space-y-6" onSubmit={handleSubmit}>
