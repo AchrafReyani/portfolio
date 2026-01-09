@@ -1,6 +1,6 @@
-import { headers } from 'next/headers';
 import { HomeBackground } from './HomeBackground';
 import { getBackgroundForContinent } from '@/lib/geo/continentBackground';
+import { resolveContinent } from '@/lib/geo/resolveContinent';
 
 type Props = {
   hero: React.ReactNode;
@@ -11,9 +11,7 @@ export async function HomeBackgroundContainer({
   hero,
   scrollButton,
 }: Props) {
-  const headersList = await headers();
-  const continent = headersList.get('x-user-continent');
-
+  const continent = await resolveContinent();
   const backgroundImage = getBackgroundForContinent(continent);
 
   return (
