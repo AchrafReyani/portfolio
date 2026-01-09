@@ -1,4 +1,4 @@
-name: Run Jest Tests
+name: Run Tests
 
 on:
   push:
@@ -16,5 +16,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20
-      - run: npm install
-      - run: npm run test:jest -- --watchAll=false
+      - name: Install dependencies
+        run: npm install
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+      - name: Run Jest tests
+        run: npm run test:jest -- --watchAll=false
+      - name: Build application
+        run: npm run build
+      - name: Run Playwright tests
+        run: npm run test:playwright
