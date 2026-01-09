@@ -17,15 +17,15 @@ const continentBackgroundMap: Record<ContinentCode, string> = {
   AN: '/images/continents/global.jpg',
 };
 
-const fallbackBackground = '/images/continents/global.jpg';
+const DEFAULT_CONTINENT: ContinentCode = 'AN';
 
 export function getBackgroundForContinent(
   continent: string | null
 ): string {
-  if (!continent) return fallbackBackground;
+  const key =
+    continent && continent in continentBackgroundMap
+      ? (continent as ContinentCode)
+      : DEFAULT_CONTINENT;
 
-  return (
-    continentBackgroundMap[continent as ContinentCode] ??
-    fallbackBackground
-  );
+  return continentBackgroundMap[key];
 }
