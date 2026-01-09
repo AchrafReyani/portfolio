@@ -1,10 +1,10 @@
-import {HomeBackground} from './HomeBackground';
-import {HomeHero} from './HomeHero';
-import {ScrollDownButton} from './ScrollDownButton';
+import { HomeBackgroundContainer } from './HomeBackgroundContainer';
+import { HomeHero } from './HomeHero';
+import { ScrollDownButton } from './ScrollDownButton';
 
 export function Home() {
   return (
-    <HomeBackground
+    <HomeBackgroundContainer
       hero={<HomeHero />}
       scrollButton={<ScrollDownButton />}
     />
