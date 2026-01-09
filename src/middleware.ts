@@ -1,11 +1,25 @@
+import { NextRequest } from 'next/server';
 import createMiddleware from 'next-intl/middleware';
-import {routing} from './i18n/routing';
+import { routing } from './i18n/routing';
 
-export default createMiddleware(routing);
+const intlMiddleware = createMiddleware(routing);
+
+export default function middleware(request: NextRequest) {
+  const response = intlMiddleware(request);
+
+  const geo = (request as NextRequest & {
+    geo?: { continent?: string };
+  }).geo;
+
+  const continent = geo?.continent;
+
+  if (continent) {
+    response.headers.set('x-user-continent', continent);
+  }
+
+  return response;
+}
 
 export const config = {
-  // Match all pathnames except for
-  // - … if they start with `/api`, `/trpc`, `/_next` or `/_vercel`
-  // - … the ones containing a dot (e.g. `favicon.ico`)
-  matcher: '/((?!api|trpc|_next|_vercel|.*\\..*).*)'
+  matcher: '/((?!api|trpc|_next|_vercel|.*\\..*).*)',
 };
