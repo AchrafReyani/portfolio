@@ -6,7 +6,6 @@ import { Contact } from '@/components/sections/Contact/Contact';
 import { Footer } from '@/components/sections/Footer/Footer';
 
 import {Locale} from 'next-intl';
-import {setRequestLocale} from 'next-intl/server';
 import {use} from 'react';
 
 type Props = {
@@ -15,9 +14,6 @@ type Props = {
 
 export default function IndexPage({params}: Props) {
   const {locale} = use(params);
-
-  // Enable static rendering
-  setRequestLocale(locale);
 
   return (
     <>
