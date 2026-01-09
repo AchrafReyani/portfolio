@@ -39,41 +39,43 @@ export function ContactInfo({myAddress, email, githubUrl}: ContactInfoProps) {
       </div>
 
       {/* Email with copy-to-clipboard */}
-      <div className="flex items-center gap-4">
-        <FaEnvelope className="text-primary-light dark:text-primary-dark text-2xl" />
-        <div className="flex items-center gap-2 relative">
-          <button
-            onClick={handleCopyEmail}
-            className="hover:underline focus:outline-none text-left"
+      <div className="relative">
+        <button
+          onClick={handleCopyEmail}
+          className="flex items-center gap-4 hover:underline focus:outline-none text-left"
+          type="button"
+        >
+          <FaEnvelope className="text-primary-light dark:text-primary-dark text-2xl" />
+          <span>{email}</span>
+        </button>
+
+        {copied && (
+          <span
+            className={`
+              absolute left-full ml-2 top-1/2 -translate-y-1/2
+              px-2 py-1 text-sm
+              bg-primary-light text-text-light dark:bg-primary-dark dark:text-text-dark
+              rounded shadow-md transition-opacity duration-200
+              ${showNotification ? 'opacity-100' : 'opacity-0 duration-500'}
+            `}
           >
-            {email}
-          </button>
-          {copied && (
-            <span
-              className={`
-                px-2 py-1 text-sm
-                bg-primary-light text-text-light dark:bg-primary-dark dark:text-text-dark
-                rounded shadow-md transition-opacity duration-200
-                ${showNotification ? 'opacity-100' : 'opacity-0 duration-500'}
-              `}
-            >
-              {t('copied')}
-            </span>
-          )}
-        </div>
+            {t('copied')}
+          </span>
+        )}
       </div>
+
 
       {/* Github */}
       <div className="flex items-center gap-4">
-        <FaGithub className="text-primary-light dark:text-primary-dark text-2xl" />
-        <a
-          href={githubUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:underline"
-        >
-          {githubDisplay}
-        </a>
+          <a
+            href={githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-4 hover:underline"
+          >
+            <FaGithub className="text-primary-light dark:text-primary-dark text-2xl" />
+            <span>{githubDisplay}</span>
+          </a>
       </div>
     </div>
   );
