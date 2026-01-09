@@ -214,6 +214,78 @@ describe('resolveContinent', () => {
       const result = await resolveContinent();
       expect(result).toBeNull();
     });
+
+    it('should map country code to continent when x-user-continent is not available', async () => {
+      const mockHeadersInstance = {
+        get: jest.fn((key: string) => {
+          if (key === 'x-user-continent') {
+            return null;
+          }
+          if (key === 'x-vercel-ip-country') {
+            return 'US'; // United States -> North America
+          }
+          return null;
+        })
+      };
+      mockHeaders.mockResolvedValue(mockHeadersInstance as any);
+
+      const result = await resolveContinent();
+      expect(result).toBe('NA');
+    });
+
+    it('should map European country code to EU', async () => {
+      const mockHeadersInstance = {
+        get: jest.fn((key: string) => {
+          if (key === 'x-user-continent') {
+            return null;
+          }
+          if (key === 'x-vercel-ip-country') {
+            return 'FR'; // France -> Europe
+          }
+          return null;
+        })
+      };
+      mockHeaders.mockResolvedValue(mockHeadersInstance as any);
+
+      const result = await resolveContinent();
+      expect(result).toBe('EU');
+    });
+
+    it('should map Asian country code to AS', async () => {
+      const mockHeadersInstance = {
+        get: jest.fn((key: string) => {
+          if (key === 'x-user-continent') {
+            return null;
+          }
+          if (key === 'x-vercel-ip-country') {
+            return 'JP'; // Japan -> Asia
+          }
+          return null;
+        })
+      };
+      mockHeaders.mockResolvedValue(mockHeadersInstance as any);
+
+      const result = await resolveContinent();
+      expect(result).toBe('AS');
+    });
+
+    it('should prioritize x-user-continent over country mapping', async () => {
+      const mockHeadersInstance = {
+        get: jest.fn((key: string) => {
+          if (key === 'x-user-continent') {
+            return 'EU';
+          }
+          if (key === 'x-vercel-ip-country') {
+            return 'US'; // Would map to NA, but EU should take priority
+          }
+          return null;
+        })
+      };
+      mockHeaders.mockResolvedValue(mockHeadersInstance as any);
+
+      const result = await resolveContinent();
+      expect(result).toBe('EU');
+    });
   });
 });
 
