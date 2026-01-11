@@ -1,6 +1,9 @@
 'use client';
 
 import {useEffect, useState} from 'react';
+import {usePathname} from 'next/navigation';
+import Link from 'next/link';
+
 import {HeaderLogo} from './HeaderLogo';
 import {DesktopNav} from './DesktopNav';
 import {HeaderActions} from './HeaderActions';
@@ -8,10 +11,16 @@ import {MobileMenu} from './MobileMenu';
 import {sections} from './sections';
 
 export function HeaderContainer() {
+  const pathname = usePathname();
+
+  const isHomePage = pathname.split('/').length === 2;
+
   const [activeSection, setActiveSection] = useState('home');
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
+    if (!isHomePage) return;
+
     const handleScroll = () => {
       const scrollPos = window.scrollY + window.innerHeight / 2;
       let current = 'home';
@@ -28,8 +37,9 @@ export function HeaderContainer() {
 
     window.addEventListener('scroll', handleScroll);
     handleScroll();
+
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isHomePage]);
 
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
@@ -38,23 +48,46 @@ export function HeaderContainer() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="flex justify-between items-center h-16">
-        <HeaderLogo onClick={() => scrollToSection('home')} />
-
-        <DesktopNav
-          activeSection={activeSection}
-          onNavigate={scrollToSection}
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="flex h-16 items-center justify-between">
+        <HeaderLogo
+          onClick={() => {
+            if (isHomePage) scrollToSection('home');
+          }}
         />
 
-        <HeaderActions />
+        <div className="hidden md:flex items-center gap-6">
+          {isHomePage ? (
+            <DesktopNav
+              activeSection={activeSection}
+              onNavigate={scrollToSection}
+            />
+          ) : (
+            <Link
+              href="/"
+              className="
+                text-sm font-medium
+                text-text-light hover:text-primary-light
+                dark:text-text-dark dark:hover:text-primary-dark
+                transition
+              "
+            >
+              Back to home
+            </Link>
+          )}
+        </div>
 
-        <MobileMenu
-          open={mobileOpen}
-          setOpen={setMobileOpen}
-          activeSection={activeSection}
-          onNavigate={scrollToSection}
-        />
+        <div className="flex items-center gap-3">
+          <HeaderActions />
+
+          <MobileMenu
+            open={mobileOpen}
+            setOpen={setMobileOpen}
+            activeSection={activeSection}
+            onNavigate={scrollToSection}
+            isHomePage={isHomePage}
+          />
+        </div>
       </div>
     </div>
   );
