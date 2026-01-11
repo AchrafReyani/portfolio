@@ -1,11 +1,14 @@
+import {ReactNode} from 'react';
 import {notFound} from 'next/navigation';
 import {Locale, hasLocale, NextIntlClientProvider} from 'next-intl';
 import {getTranslations, setRequestLocale} from 'next-intl/server';
-import {ReactNode} from 'react';
 import {clsx} from 'clsx';
 import {Inter} from 'next/font/google';
-import {routing} from '@/i18n/routing';
 import {ThemeProvider} from 'next-themes';
+
+import {routing} from '@/i18n/routing';
+import Header from '@/components/sections/Header/Header';
+import {Footer} from '@/components/sections/Footer/Footer';
 import FaviconThemeSwitcher from '@/components/common/FaviconThemeSwitcher';
 
 export const dynamic = 'force-dynamic';
@@ -69,11 +72,22 @@ export default async function LocaleLayout({children, params}: Props) {
   setRequestLocale(locale);
 
   return (
-    <html className="h-full" lang={locale} suppressHydrationWarning>
-      <body className={clsx(inter.className, 'flex h-full flex-col')}>
-        <ThemeProvider attribute="class">
+    <html lang={locale} className="h-full" suppressHydrationWarning>
+      <body
+        className={clsx(
+          inter.className,
+          'flex min-h-screen flex-col bg-background text-foreground'
+        )}
+      >
+        <ThemeProvider attribute="class" disableTransitionOnChange>
           <NextIntlClientProvider>
-            {children}
+            <Header />
+
+            <main id="page-content" className="flex-1">
+              {children}
+            </main>
+
+            <Footer />
             <FaviconThemeSwitcher />
           </NextIntlClientProvider>
         </ThemeProvider>
