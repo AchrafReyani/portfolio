@@ -23,8 +23,16 @@ export function MobileMenu({
 }: Props) {
   const t = useTranslations('Header');
 
+  const navItemClass = (active?: boolean) =>
+    `block w-full text-left transition ${
+      active
+        ? 'font-bold text-primary-light dark:text-primary-dark'
+        : 'text-text-light hover:text-primary-light dark:text-text-dark dark:hover:text-primary-dark'
+    }`;
+
   return (
     <>
+      {/* Hamburger */}
       <button
         className="md:hidden focus:outline-none"
         onClick={() => setOpen(!open)}
@@ -44,41 +52,37 @@ export function MobileMenu({
         </svg>
       </button>
 
+      {/* Menu */}
       {open && (
         <nav className="absolute left-0 top-16 z-40 w-full bg-bg-light shadow-md dark:bg-bg-dark md:hidden">
           <ul className="flex flex-col space-y-4 p-4">
+            {/* Home page: section navigation */}
             {isHomePage &&
               sections.map((id) => (
                 <li key={id}>
                   <button
                     onClick={() => onNavigate(id)}
-                    className={`block w-full text-left transition ${
-                      activeSection === id
-                        ? 'font-bold text-primary-light dark:text-primary-dark'
-                        : 'text-text-light hover:text-primary-light dark:text-text-dark dark:hover:text-primary-dark'
-                    }`}
+                    className={navItemClass(activeSection === id)}
                   >
                     {t(id)}
                   </button>
                 </li>
               ))}
 
+            {/* Non-home pages: back to home (TEXT STYLE, NOT A BUTTON) */}
             {!isHomePage && (
               <li>
                 <Link
                   href="/"
                   onClick={() => setOpen(false)}
-                  className="
-                    block rounded-lg bg-primary-light px-4 py-2 text-center
-                    font-medium text-white shadow-card-light
-                    dark:bg-primary-dark dark:shadow-card-dark
-                  "
+                  className={navItemClass()}
                 >
                   Back to home
                 </Link>
               </li>
             )}
 
+            {/* Global actions */}
             <li className="pt-2">
               <LocaleSwitcher />
             </li>
