@@ -54,5 +54,11 @@
     "success_message": "Thanks for reaching out! Your message has been sent successfully. I'll get back to you soon.",
     "error_message": "Oops! Something went wrong while sending your message. Please try again later or contact me directly via email.",
     "sending": "Sending your message..."
+  },
+  "NotFound": {
+    "code":"404 error",
+    "title":"Page not found",
+    "message":"Sorry, the page you’re looking for doesn’t exist or has been moved.",
+    "backbutton":"Back to home"
   }
 }
