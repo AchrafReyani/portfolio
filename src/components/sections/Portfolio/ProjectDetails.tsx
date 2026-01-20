@@ -1,4 +1,3 @@
-import { useTranslations } from 'next-intl';
 import { ViewSourceButton } from './ViewSourceButton';
 
 type Props = {
@@ -8,7 +7,6 @@ type Props = {
 };
 
 export function ProjectDetails({ name, bullets, githubUrl }: Props) {
-  const t = useTranslations('Portfolio');
 
   return (
     <div className="flex flex-col justify-start w-full md:w-1/2 mt-6 md:mt-0 md:pl-8">
