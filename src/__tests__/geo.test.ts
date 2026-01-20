@@ -7,6 +7,15 @@ jest.mock('next/headers', () => ({
   headers: jest.fn()
 }));
 
+function setNodeEnv(value?: string) {
+  const env = process.env as unknown as Record<string, string | undefined>;
+  if (value === undefined) {
+    delete env['NODE_ENV'];
+    return;
+  }
+  env['NODE_ENV'] = value;
+}
+
 describe('getBackgroundForContinent', () => {
   it('should return correct background for North America', () => {
     expect(getBackgroundForContinent('NA')).toBe(
@@ -75,16 +84,16 @@ describe('resolveContinent', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     // Reset NODE_ENV
-    delete (process.env as any).NODE_ENV;
+    setNodeEnv();
   });
 
   afterEach(() => {
-    delete (process.env as any).NODE_ENV;
+    setNodeEnv();
   });
 
   describe('development mode', () => {
     beforeEach(() => {
-      process.env.NODE_ENV = 'development';
+      setNodeEnv('development');
     });
 
     it('should return continent from query param when x-request-url is set', async () => {
@@ -96,7 +105,9 @@ describe('resolveContinent', () => {
           return null;
         })
       };
-      mockHeaders.mockResolvedValue(mockHeadersInstance as any);
+      mockHeaders.mockResolvedValue(
+        mockHeadersInstance as unknown as Awaited<ReturnType<typeof headers>>
+      );
 
       const result = await resolveContinent();
       expect(result).toBe('EU');
@@ -112,7 +123,9 @@ describe('resolveContinent', () => {
           return null;
         })
       };
-      mockHeaders.mockResolvedValue(mockHeadersInstance as any);
+      mockHeaders.mockResolvedValue(
+        mockHeadersInstance as unknown as Awaited<ReturnType<typeof headers>>
+      );
 
       const result = await resolveContinent();
       expect(result).toBe('EU');
@@ -130,7 +143,9 @@ describe('resolveContinent', () => {
           return null;
         })
       };
-      mockHeaders.mockResolvedValue(mockHeadersInstance as any);
+      mockHeaders.mockResolvedValue(
+        mockHeadersInstance as unknown as Awaited<ReturnType<typeof headers>>
+      );
 
       const result = await resolveContinent();
       expect(result).toBe('NA');
@@ -148,7 +163,9 @@ describe('resolveContinent', () => {
           return null;
         })
       };
-      mockHeaders.mockResolvedValue(mockHeadersInstance as any);
+      mockHeaders.mockResolvedValue(
+        mockHeadersInstance as unknown as Awaited<ReturnType<typeof headers>>
+      );
 
       const result = await resolveContinent();
       // Should fall back to x-user-continent
@@ -159,7 +176,9 @@ describe('resolveContinent', () => {
       const mockHeadersInstance = {
         get: jest.fn(() => null)
       };
-      mockHeaders.mockResolvedValue(mockHeadersInstance as any);
+      mockHeaders.mockResolvedValue(
+        mockHeadersInstance as unknown as Awaited<ReturnType<typeof headers>>
+      );
 
       const result = await resolveContinent();
       expect(result).toBeNull();
@@ -168,7 +187,7 @@ describe('resolveContinent', () => {
 
   describe('production mode', () => {
     beforeEach(() => {
-      process.env.NODE_ENV = 'production';
+      setNodeEnv('production');
     });
 
     it('should return continent from x-user-continent header', async () => {
@@ -180,7 +199,9 @@ describe('resolveContinent', () => {
           return null;
         })
       };
-      mockHeaders.mockResolvedValue(mockHeadersInstance as any);
+      mockHeaders.mockResolvedValue(
+        mockHeadersInstance as unknown as Awaited<ReturnType<typeof headers>>
+      );
 
       const result = await resolveContinent();
       expect(result).toBe('EU');
@@ -198,7 +219,9 @@ describe('resolveContinent', () => {
           return null;
         })
       };
-      mockHeaders.mockResolvedValue(mockHeadersInstance as any);
+      mockHeaders.mockResolvedValue(
+        mockHeadersInstance as unknown as Awaited<ReturnType<typeof headers>>
+      );
 
       const result = await resolveContinent();
       // Should use x-user-continent, not query param
@@ -209,7 +232,9 @@ describe('resolveContinent', () => {
       const mockHeadersInstance = {
         get: jest.fn(() => null)
       };
-      mockHeaders.mockResolvedValue(mockHeadersInstance as any);
+      mockHeaders.mockResolvedValue(
+        mockHeadersInstance as unknown as Awaited<ReturnType<typeof headers>>
+      );
 
       const result = await resolveContinent();
       expect(result).toBeNull();
@@ -227,7 +252,9 @@ describe('resolveContinent', () => {
           return null;
         })
       };
-      mockHeaders.mockResolvedValue(mockHeadersInstance as any);
+      mockHeaders.mockResolvedValue(
+        mockHeadersInstance as unknown as Awaited<ReturnType<typeof headers>>
+      );
 
       const result = await resolveContinent();
       expect(result).toBe('NA');
@@ -245,7 +272,9 @@ describe('resolveContinent', () => {
           return null;
         })
       };
-      mockHeaders.mockResolvedValue(mockHeadersInstance as any);
+      mockHeaders.mockResolvedValue(
+        mockHeadersInstance as unknown as Awaited<ReturnType<typeof headers>>
+      );
 
       const result = await resolveContinent();
       expect(result).toBe('EU');
@@ -263,7 +292,9 @@ describe('resolveContinent', () => {
           return null;
         })
       };
-      mockHeaders.mockResolvedValue(mockHeadersInstance as any);
+      mockHeaders.mockResolvedValue(
+        mockHeadersInstance as unknown as Awaited<ReturnType<typeof headers>>
+      );
 
       const result = await resolveContinent();
       expect(result).toBe('AS');
@@ -281,7 +312,9 @@ describe('resolveContinent', () => {
           return null;
         })
       };
-      mockHeaders.mockResolvedValue(mockHeadersInstance as any);
+      mockHeaders.mockResolvedValue(
+        mockHeadersInstance as unknown as Awaited<ReturnType<typeof headers>>
+      );
 
       const result = await resolveContinent();
       expect(result).toBe('EU');
