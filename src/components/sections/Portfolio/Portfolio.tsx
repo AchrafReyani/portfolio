@@ -1,4 +1,5 @@
 import {useTranslations} from 'next-intl';
+import {sectionTitleClass} from '@/styles/componentStyles';
 import {Section} from '@/components/shared/Section';
 import {PortfolioProject} from './PortfolioProject';
 
@@ -31,7 +32,7 @@ export function Portfolio() {
       "
     >
       <div className="w-full flex flex-col items-center">
-        <h2 className="text-4xl font-bold mb-12 border-b-4 border-primary-light dark:border-primary-dark inline-block pb-2">
+        <h2 className={`${sectionTitleClass} mb-12`}>
           {t('title')} 🛠️
         </h2>
 

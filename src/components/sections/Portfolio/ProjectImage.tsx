@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import {useTranslations} from 'next-intl';
 import {FaExternalLinkAlt} from 'react-icons/fa';
 
 type Props = {
@@ -8,6 +11,7 @@ type Props = {
 };
 
 export function ProjectImage({image, name, url}: Props) {
+  const t = useTranslations('Portfolio');
   return (
     <div className="relative w-full md:w-1/2 rounded-lg shadow-card-light dark:shadow-card-dark overflow-hidden group">
       <a
@@ -24,8 +28,8 @@ export function ProjectImage({image, name, url}: Props) {
         />
 
         <div className="absolute inset-0 bg-overlay-light dark:bg-overlay-dark opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-          <span className="text-text-light dark:text-text-dark text-lg font-semibold flex items-center gap-2">
-            View Project <FaExternalLinkAlt />
+          <span className="bg-black/70 text-white px-4 py-2 rounded-lg text-lg font-semibold flex items-center gap-2 shadow-lg">
+            {t('view_project')} <FaExternalLinkAlt />
           </span>
         </div>
       </a>

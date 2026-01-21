@@ -1,4 +1,5 @@
 import {useTranslations} from 'next-intl';
+import {sectionTitleClass} from '@/styles/componentStyles';
 import { DownloadResumeButton } from '@/components/sections/About/DownloadResumeButton';
 
 export function AboutContent() {
@@ -6,7 +7,7 @@ export function AboutContent() {
 
   return (
     <div className="md:w-2/3 mt-8 md:mt-0 md:pl-12 text-center md:text-left max-w-3xl">
-      <h2 className="text-4xl font-bold mb-6 border-b-4 border-primary-light dark:border-primary-dark inline-block pb-2">
+      <h2 className={`${sectionTitleClass} mb-6`}>
         {t('title')} 🙋
       </h2>
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import {useTranslations} from 'next-intl';
 import {AttachmentInput} from './AttachmentInput';
+import {sectionTitleClass, formLabelClass, formInputClass, formTextareaClass} from '@/styles/componentStyles';
 
 interface ContactFormProps {
   t: ReturnType<typeof useTranslations>;
@@ -21,14 +22,14 @@ export function ContactForm({
 }: ContactFormProps) {
   return (
     <div className="flex-1 w-full">
-      <h2 className="text-4xl font-bold mb-8 text-text-light dark:text-text-dark border-b-4 border-primary-light dark:border-primary-dark inline-block pb-2">
+      <h2 className={`${sectionTitleClass} mb-8`}>
         {t('title')}🤝
       </h2>
       <form className="space-y-6" onSubmit={handleSubmit}>
         <div>
           <label
             htmlFor="name"
-            className="block mb-2 text-sm font-medium text-text-light dark:text-text-dark"
+            className={formLabelClass}
           >
             {t('name')}
           </label>
@@ -37,19 +38,14 @@ export function ContactForm({
             id="name"
             name="name"
             required
-            className="
-              w-full px-4 py-2 rounded-md
-              bg-secondary-light border border-muted-light text-text-light
-              dark:bg-secondary-dark dark:border-muted-dark dark:text-text-dark
-              focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark
-            "
+            className={formInputClass}
           />
         </div>
 
         <div>
           <label
             htmlFor="email"
-            className="block mb-2 text-sm font-medium text-text-light dark:text-text-dark"
+            className={formLabelClass}
           >
             {t('email')}
           </label>
@@ -58,19 +54,14 @@ export function ContactForm({
             id="email"
             name="email"
             required
-            className="
-              w-full px-4 py-2 rounded-md
-              bg-secondary-light border border-muted-light text-text-light
-              dark:bg-secondary-dark dark:border-muted-dark dark:text-text-dark
-              focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark
-            "
+            className={formInputClass}
           />
         </div>
 
         <div>
           <label
             htmlFor="subject"
-            className="block mb-2 text-sm font-medium text-text-light dark:text-text-dark"
+            className={formLabelClass}
           >
             {t('subject')}
           </label>
@@ -78,19 +69,14 @@ export function ContactForm({
             type="text"
             id="subject"
             name="subject"
-            className="
-              w-full px-4 py-2 rounded-md
-              bg-secondary-light border border-muted-light text-text-light
-              dark:bg-secondary-dark dark:border-muted-dark dark:text-text-dark
-              focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark
-            "
+            className={formInputClass}
           />
         </div>
 
         <div>
           <label
             htmlFor="message"
-            className="block mb-2 text-sm font-medium text-text-light dark:text-text-dark"
+            className={formLabelClass}
           >
             {t('message')}
           </label>
@@ -99,12 +85,7 @@ export function ContactForm({
             name="message"
             rows={5}
             required
-            className="
-              w-full px-4 py-2 rounded-md
-              bg-secondary-light border border-muted-light text-text-light
-              dark:bg-secondary-dark dark:border-muted-dark dark:text-text-dark
-              focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark
-            "
+            className={formTextareaClass}
           />
         </div>
 
@@ -128,7 +109,7 @@ export function ContactForm({
       </form>
 
       {feedback && (
-        <p className="mt-4 text-center text-sm text-text-light dark:text-text-dark">
+        <p className={`mt-4 text-center text-sm ${textPrimaryClass}`}>
           {feedback}
         </p>
       )}

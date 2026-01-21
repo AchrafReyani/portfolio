@@ -34,6 +34,7 @@
   "Portfolio": {
     "project": "Job Matching Platform",
     "title": "Portfolio",
+    "view_project": "Project bekijken",
     "image_text": "Check it!",
     "portfolio_bulletpoint_1": "Registreer als bedrijf of werkzoekende",
     "portfolio_bulletpoint_2": "Bewerk je profiel",
