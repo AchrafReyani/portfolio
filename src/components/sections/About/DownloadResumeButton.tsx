@@ -1,10 +1,16 @@
 import { useTranslations, useLocale } from 'next-intl';
 import { Download } from 'lucide-react';
 import { ActionLinkButton } from '@/components/shared/ActionLinkButton';
+import { isResumeAvailable } from '@/lib/availableResumes';
 
 export function DownloadResumeButton() {
   const t = useTranslations('Resume');
   const locale = useLocale();
+
+  // Don't show button if resume is not available for this locale
+  if (!isResumeAvailable(locale)) {
+    return null;
+  }
 
   const resumePdf = `/docs/resume-${locale}.pdf`;
 
