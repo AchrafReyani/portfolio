@@ -77,7 +77,7 @@ export function MobileMenu({
                   onClick={() => setOpen(false)}
                   className={navItemClass()}
                 >
-                  Back to home
+                  {t('back_to_home')}
                 </Link>
               </li>
             )}

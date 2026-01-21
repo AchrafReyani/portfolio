@@ -2,6 +2,7 @@
 
 import {useEffect, useState} from 'react';
 import {usePathname} from 'next/navigation';
+import {useTranslations} from 'next-intl';
 import Link from 'next/link';
 
 import {HeaderLogo} from './HeaderLogo';
@@ -12,6 +13,7 @@ import {sections} from './sections';
 
 export function HeaderContainer() {
   const pathname = usePathname();
+  const t = useTranslations('Header');
 
   const isHomePage = pathname.split('/').length === 2;
 
@@ -72,7 +74,7 @@ export function HeaderContainer() {
                 transition
               "
             >
-              Back to home
+              {t('back_to_home')}
             </Link>
           )}
         </div>
