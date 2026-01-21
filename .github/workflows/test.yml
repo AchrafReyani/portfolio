@@ -18,11 +18,8 @@ jobs:
           node-version: 20
       - name: Install dependencies
         run: npm install
-      - name: Install Playwright browsers
-        run: npx playwright install --with-deps
       - name: Run Jest tests
         run: npm run test:jest -- --watchAll=false
       - name: Build application
         run: npm run build
-      - name: Run Playwright tests
-        run: npm run test:playwright
+      # Playwright E2E geo tests were removed in favor of lighter Jest unit/integration tests.

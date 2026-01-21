@@ -20,10 +20,7 @@ const config: PlaywrightTestConfig = {
   ],
   fullyParallel: true,
   use: {
-    baseURL: BASE_URL,
-    env: {
-      PLAYWRIGHT: 'true'
-    }
+    baseURL: BASE_URL
   },
   webServer: {
     // Use dev server for geo-location tests to test query param override
