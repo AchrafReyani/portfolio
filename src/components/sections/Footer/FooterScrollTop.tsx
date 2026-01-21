@@ -1,6 +1,7 @@
 'use client';
 
 import {FaArrowUp} from 'react-icons/fa';
+import {buttonPrimaryCircular} from '@/styles/componentStyles';
 
 export function FooterScrollTop() {
   const scrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -16,15 +17,7 @@ export function FooterScrollTop() {
       href="#home"
       onClick={scrollToTop}
       aria-label="Back to top"
-      className="
-        absolute -top-8 rounded-full p-3
-        bg-primary-light text-text-light
-        dark:bg-primary-dark dark:text-text-dark
-        hover:bg-accent-light dark:hover:bg-accent-dark
-        hover:text-text-light dark:hover:text-text-dark
-        transition-colors cursor-pointer
-        flex items-center justify-center
-      "
+      className={`absolute -top-8 ${buttonPrimaryCircular} cursor-pointer`}
     >
       <FaArrowUp className="text-4xl drop-shadow-md" />
     </a>

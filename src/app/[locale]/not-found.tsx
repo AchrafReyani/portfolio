@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+import { buttonPrimary404 } from '@/styles/componentStyles';
 
 export default function NotFound() {
   const t = useTranslations('NotFound');
@@ -20,12 +21,7 @@ export default function NotFound() {
 
       <Link
         href="/"
-        className="
-          mt-8 inline-flex items-center justify-center rounded-lg
-          bg-primary-light px-6 py-3 font-medium text-white
-          shadow-card-light transition hover:opacity-90
-          dark:bg-primary-dark dark:shadow-card-dark
-        "
+        className={`mt-8 ${buttonPrimary404}`}
       >
         {t('backbutton')}
       </Link>

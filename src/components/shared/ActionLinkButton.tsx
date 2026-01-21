@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { buttonPrimaryLarge } from '@/styles/componentStyles';
 
 type ActionLinkButtonProps = {
   href: string;
@@ -19,14 +20,7 @@ export function ActionLinkButton({
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="
-          inline-flex items-center gap-2 px-6 py-3 
-          bg-primary-light text-text-light 
-          dark:bg-primary-dark dark:text-text-dark 
-          font-semibold rounded-md shadow-md 
-          hover:bg-accent-light dark:hover:bg-accent-dark 
-          transition
-        "
+        className={buttonPrimaryLarge}
       >
         {icon}
         {label}

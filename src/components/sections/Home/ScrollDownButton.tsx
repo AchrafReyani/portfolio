@@ -1,6 +1,7 @@
 'use client';
 
 import {FaArrowUp} from 'react-icons/fa';
+import {buttonPrimaryCircular} from '@/styles/componentStyles';
 
 export function ScrollDownButton() {
   const scrollToAbout = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -14,14 +15,7 @@ export function ScrollDownButton() {
   return (
     <button
       onClick={scrollToAbout}
-      className="
-        absolute bottom-10 z-10 rounded-full p-3
-        bg-primary-light text-text-light
-        dark:bg-primary-dark dark:text-text-dark
-        hover:bg-accent-light dark:hover:bg-accent-dark
-        hover:text-text-light dark:hover:text-text-dark
-        transition flex items-center justify-center
-      "
+      className={`absolute bottom-10 z-10 ${buttonPrimaryCircular}`}
       aria-label="Scroll to About section"
     >
       <FaArrowUp className="transform rotate-180 text-4xl" />
