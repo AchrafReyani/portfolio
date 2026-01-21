@@ -1,7 +1,6 @@
 import {useTranslations} from 'next-intl';
 import {sectionTitleClass} from '@/styles/componentStyles';
 import {Section} from '@/components/shared/Section';
-import {SectionDivider} from '@/components/shared/SectionDivider';
 import {PortfolioProject} from './PortfolioProject';
 
 export function Portfolio() {
@@ -23,21 +22,18 @@ export function Portfolio() {
   };
 
   return (
-    <>
-      <SectionDivider />
-      <Section
-        id="portfolio"
-        minHeight="auto"
-        className="items-start justify-start"
-      >
-        <div className="w-full flex flex-col items-center">
-          <h2 className={`${sectionTitleClass} mb-12`}>
-            {t('title')} 🛠️
-          </h2>
+    <Section
+      id="portfolio"
+      minHeight="auto"
+      className="items-start justify-start"
+    >
+      <div className="w-full flex flex-col items-center">
+        <h2 className={`${sectionTitleClass} mb-12`}>
+          {t('title')} 🛠️
+        </h2>
 
-          <PortfolioProject project={project} />
-        </div>
-      </Section>
-    </>
+        <PortfolioProject project={project} />
+      </div>
+    </Section>
   );
 }
