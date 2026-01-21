@@ -2,6 +2,7 @@ import React from 'react';
 import {useTranslations} from 'next-intl';
 import {AttachmentInput} from './AttachmentInput';
 import {sectionTitleClass, formLabelClass, formInputClass, formTextareaClass, textPrimaryClass} from '@/styles/componentStyles';
+import {useFitText} from '@/lib/useFitText';
 
 interface ContactFormProps {
   t: ReturnType<typeof useTranslations>;
@@ -20,10 +21,24 @@ export function ContactForm({
   handleSubmit,
   feedback
 }: ContactFormProps) {
+  // Keep the title on one line across breakpoints by shrinking font-size as needed.
+  // 36px ~= Tailwind text-4xl.
+  const {containerRef, textRef, fontSizePx} = useFitText({
+    maxFontPx: 36,
+    minFontPx: 18,
+    stepPx: 1
+  });
+
   return (
     <div className="flex-1 w-full">
-      <h2 className={`${sectionTitleClass} mb-8`}>
-        {t('title')}🤝
+      <h2 ref={containerRef as any} className="mb-8 w-full overflow-hidden">
+        <span
+          ref={textRef as any}
+          className={`${sectionTitleClass} whitespace-nowrap inline-block align-bottom`}
+          style={{fontSize: `${fontSizePx}px`}}
+        >
+          {t('title')}🤝
+        </span>
       </h2>
       <form className="space-y-6" onSubmit={handleSubmit}>
         <div>
