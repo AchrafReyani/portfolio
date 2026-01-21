@@ -19,7 +19,9 @@ export function HomeBackground({
 
       <div className="relative z-10">{hero}</div>
 
-      {scrollButton}
+      <div className="relative z-10 py-8">
+        {scrollButton}
+      </div>
     </section>
   );
 }

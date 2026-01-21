@@ -6,9 +6,10 @@ export function ScrollDownButton() {
   return (
     <ScrollToButton
       targetId="about"
-      position="bottom-10"
+      position="relative"
       direction="down"
       ariaLabel="Scroll to About section"
+      dropShadow={false}
     />
   );
 }
