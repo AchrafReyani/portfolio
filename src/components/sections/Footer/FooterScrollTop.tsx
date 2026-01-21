@@ -6,7 +6,7 @@ export function FooterScrollTop() {
   return (
     <ScrollToButton
       targetId="home"
-      position="-top-8"
+      position="-top-6 right-4"
       direction="up"
       dropShadow
       ariaLabel="Back to top"

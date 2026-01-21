@@ -56,6 +56,10 @@
     "error_message": "Oops! Something went wrong while sending your message. Please try again later or contact me directly via email.",
     "sending": "Sending your message..."
   },
+  "Footer": {
+    "all_rights_reserved": "All rights reserved",
+    "portfolio": "Portfolio"
+  },
   "NotFound": {
     "code":"404 error",
     "title":"Page not found",

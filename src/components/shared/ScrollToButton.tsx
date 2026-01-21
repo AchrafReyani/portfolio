@@ -5,7 +5,7 @@ import {buttonPrimaryCircular} from '@/styles/componentStyles';
 
 type ScrollToButtonProps = {
   targetId: string;
-  position: 'bottom-10' | '-top-8';
+  position?: string;
   direction?: 'up' | 'down';
   dropShadow?: boolean;
   ariaLabel: string;
@@ -13,7 +13,7 @@ type ScrollToButtonProps = {
 
 export function ScrollToButton({
   targetId,
-  position,
+  position = '-top-8',
   direction = 'up',
   dropShadow = false,
   ariaLabel
@@ -26,7 +26,7 @@ export function ScrollToButton({
     }
   };
 
-  const isAnchor = position === '-top-8';
+  const isAnchor = position === '-top-8' || position.includes('-top-');
   const iconClasses = `text-4xl ${direction === 'down' ? 'transform rotate-180' : ''} ${
     dropShadow ? 'drop-shadow-md' : ''
   }`;

@@ -56,6 +56,10 @@
     "error_message": "Oeps! Er ging iets mis bij het verzenden van je bericht. Probeer het later nog eens of neem direct contact met me op via e-mail.",
     "sending": "Je bericht wordt verzonden..."
   },
+  "Footer": {
+    "all_rights_reserved": "Alle rechten voorbehouden",
+    "portfolio": "Portfolio"
+  },
   "NotFound": {
     "code": "404-fout",
     "title": "Pagina niet gevonden",

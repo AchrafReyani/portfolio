@@ -4,6 +4,7 @@ import {useState} from 'react';
 import {useTranslations} from 'next-intl';
 import {ContactForm} from './ContactForm';
 import {ContactInfo} from './ContactInfo';
+import {ScrollToButton} from '@/components/shared/ScrollToButton';
 
 export function ContactContainer() {
   const t = useTranslations('Contact');
@@ -48,7 +49,7 @@ export function ContactContainer() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row items-start justify-center gap-12 w-full">
+    <div className="flex flex-col md:flex-row items-start justify-center gap-12 w-full relative">
       <ContactForm
         t={t}
         loading={loading}
@@ -63,6 +64,15 @@ export function ContactContainer() {
         email={process.env.NEXT_PUBLIC_MY_EMAIL || ''}
         githubUrl={process.env.NEXT_PUBLIC_MY_GITHUB || ''}
       />
+
+      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-24">
+        <ScrollToButton
+          targetId="home"
+          position="bottom-10"
+          direction="up"
+          ariaLabel="Back to top"
+        />
+      </div>
     </div>
   );
 }
