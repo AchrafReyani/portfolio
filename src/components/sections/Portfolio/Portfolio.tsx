@@ -1,6 +1,7 @@
 import {useTranslations} from 'next-intl';
 import {sectionTitleClass} from '@/styles/componentStyles';
 import {Section} from '@/components/shared/Section';
+import {SectionDivider} from '@/components/shared/SectionDivider';
 import {PortfolioProject} from './PortfolioProject';
 
 export function Portfolio() {
@@ -23,13 +24,7 @@ export function Portfolio() {
 
   return (
     <>
-      <div className="bg-bg-light dark:bg-bg-dark w-full flex justify-center py-8">
-        <div className="flex items-center justify-center w-full max-w-7xl px-6 md:px-20">
-          <div className="flex-1 h-px bg-primary-light dark:bg-primary-dark" />
-          <div className="w-2 h-2 rounded-full bg-primary-light dark:bg-primary-dark mx-4" />
-          <div className="flex-1 h-px bg-primary-light dark:bg-primary-dark" />
-        </div>
-      </div>
+      <SectionDivider />
       <Section
         id="portfolio"
         minHeight="auto"
