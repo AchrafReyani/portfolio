@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "next dev --turbo",
     "lint": "eslint src --fix && tsc && prettier src --write",
-    "test": "pnpm run test:playwright && pnpm run test:jest",
+    "test": "npm run test:playwright && npm run test:jest",
     "test:playwright": "playwright test",
     "test:jest": "jest",
     "build": "next build",

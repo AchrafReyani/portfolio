@@ -17,9 +17,10 @@ const config: PlaywrightTestConfig = {
   fullyParallel: true,
   webServer: {
     // Use dev server for geo-location tests to test query param override
-    command: process.env.CI
-      ? `PORT=${PORT} npm start`
-      : `PORT=${PORT} npm run dev`,
+    command:
+      process.platform === 'win32'
+        ? `set PORT=${PORT} && ${process.env.CI ? 'npm start' : 'npm run dev'}`
+        : `PORT=${PORT} ${process.env.CI ? 'npm start' : 'npm run dev'}`,
     port: PORT,
     reuseExistingServer: !process.env.CI
   }
