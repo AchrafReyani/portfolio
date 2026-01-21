@@ -24,12 +24,8 @@ export function Portfolio() {
   return (
     <Section
       id="portfolio"
-      className="
-        min-h-0
-        flex-col
-        justify-start
-        py-16
-      "
+      minHeight="auto"
+      className="items-start justify-start"
     >
       <div className="w-full flex flex-col items-center">
         <h2 className={`${sectionTitleClass} mb-12`}>

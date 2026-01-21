@@ -3,7 +3,7 @@ import {ContactContainer} from './ContactContainer';
 
 export function Contact() {
   return (
-    <Section id="contact">
+    <Section id="contact" minHeight="auto" className="items-start justify-start">
       <ContactContainer />
     </Section>
   );
