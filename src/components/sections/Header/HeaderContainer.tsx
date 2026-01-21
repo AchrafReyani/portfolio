@@ -67,12 +67,7 @@ export function HeaderContainer() {
           ) : (
             <Link
               href="/"
-              className="
-                text-sm font-medium
-                text-text-light hover:text-primary-light
-                dark:text-text-dark dark:hover:text-primary-dark
-                transition
-              "
+              className="transition text-text-light dark:text-text-dark hover:text-primary-light dark:hover:text-primary-dark"
             >
               {t('back_to_home')}
             </Link>
