@@ -1,7 +1,7 @@
 import React from 'react';
 import {useTranslations} from 'next-intl';
 import {AttachmentInput} from './AttachmentInput';
-import {sectionTitleClass, formLabelClass, formInputClass, formTextareaClass} from '@/styles/componentStyles';
+import {sectionTitleClass, formLabelClass, formInputClass, formTextareaClass, textPrimaryClass} from '@/styles/componentStyles';
 
 interface ContactFormProps {
   t: ReturnType<typeof useTranslations>;
