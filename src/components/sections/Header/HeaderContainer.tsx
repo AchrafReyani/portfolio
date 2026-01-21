@@ -9,7 +9,7 @@ import {HeaderLogo} from './HeaderLogo';
 import {DesktopNav} from './DesktopNav';
 import {HeaderActions} from './HeaderActions';
 import {MobileMenu} from './MobileMenu';
-import {sections} from './sections';
+import {sections, navItemBaseClass} from './sections';
 
 export function HeaderContainer() {
   const pathname = usePathname();
@@ -67,7 +67,7 @@ export function HeaderContainer() {
           ) : (
             <Link
               href="/"
-              className="transition text-text-light dark:text-text-dark hover:text-primary-light dark:hover:text-primary-dark"
+              className={navItemBaseClass}
             >
               {t('back_to_home')}
             </Link>

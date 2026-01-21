@@ -1,5 +1,5 @@
 import {useTranslations} from 'next-intl';
-import {sections} from './sections';
+import {sections, navItemBaseClass, navItemActiveClass} from './sections';
 
 type Props = {
   activeSection: string;
@@ -15,11 +15,7 @@ export function DesktopNav({activeSection, onNavigate}: Props) {
         <button
           key={id}
           onClick={() => onNavigate(id)}
-          className={`transition ${
-            activeSection === id
-              ? 'text-primary-light dark:text-primary-dark font-bold'
-              : 'text-text-light dark:text-text-dark hover:text-primary-light dark:hover:text-primary-dark'
-          }`}
+          className={activeSection === id ? navItemActiveClass : navItemBaseClass}
         >
           {t(id)}
         </button>
