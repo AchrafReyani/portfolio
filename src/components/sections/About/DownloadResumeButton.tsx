@@ -12,7 +12,7 @@ export function DownloadResumeButton() {
     return null;
   }
 
-  const resumePdf = `/docs/resume-${locale}.pdf`;
+  const resumePdf = `/resumes/resume-${locale}.pdf`;
 
   return (
     <ActionLinkButton
