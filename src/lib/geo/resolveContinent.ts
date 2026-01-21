@@ -35,9 +35,11 @@ const countryToContinent: Record<string, string> = {
 export async function resolveContinent(): Promise<string | null> {
   const h = await headers();
 
-  // 1️⃣ Dev override via query param (safe + deterministic)
-  // This allows testing different continents locally by adding ?continent=EU to the URL
-  if (process.env.NODE_ENV === 'development') {
+  // 1️⃣ Override via query param (enabled outside production and in Playwright runs)
+  // This allows deterministic testing by adding ?continent=EU to the URL
+  const allowOverride =
+    process.env.NODE_ENV !== 'production' || process.env.PLAYWRIGHT === 'true';
+  if (allowOverride) {
     const url = h.get('x-request-url');
     if (url) {
       try {
