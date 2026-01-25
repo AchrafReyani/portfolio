@@ -22,8 +22,10 @@ export function ActionLinkButton({
         rel="noopener noreferrer"
         className={buttonPrimaryLarge}
       >
-        {icon}
-        {label}
+        <span className="inline-flex items-center gap-2">
+          {icon}
+          {label}
+        </span>
       </a>
 
       {description && (
